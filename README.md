@@ -6,7 +6,7 @@ Open `index.html` in a browser, or drop the whole folder on any web host.
 ## Structure
 
 ```
-index.html            Home
+index.html            Home — hand-authored landing page (not generated from Stitch)
 programs.html         Career-transformation landing page
 courses.html          Course catalogue (live filtering + sorting)
 program-detail.html   Single programme page
@@ -34,9 +34,10 @@ Built on the official KropiQ brand sheet:
 
 | Token | Value | Use |
 | --- | --- | --- |
-| Brand orange | `#F25C2A` | CTAs, active states, accents (~10%) |
-| Slate gray | `#2B3440` | Headings, body text, nav, footers (~30%) |
+| Brand orange | `#FF3D00` | CTAs, active states, accents (~10%) |
+| Slate gray | `#2B3440` | Headings, body text, nav (~30%) |
 | White | `#FFFFFF` | Backgrounds and surfaces (~60%) |
+| Black | `#000000` | Site footer and the AI-tutor feature band |
 | Typeface | Inter | 56/36/24/16/14 px scale |
 | Radius | 4px standard, 8px large, pill for tags | |
 
@@ -59,6 +60,18 @@ needs, so the one file is safe to load everywhere:
   No network calls. User input is inserted as text, never HTML.
 - **Contact form** (`contact.html`) — required-field and email validation with
   an inline confirmation. There is no backend; wire `submit` to your endpoint.
+- **Scroll reveals and stat counters** (`index.html`) — sections fade in on
+  entry and the stat tiles count up once. Both respect
+  `prefers-reduced-motion`, and the reveal styles are scoped to `.js` so
+  content is never hidden if scripting is unavailable.
+
+## Known issue: orange contrast
+
+`#FF3D00` on white measures **3.55:1**, and white on `#FF3D00` is the same.
+That clears WCAG AA for large text (3:1) but not for normal-size text (4.5:1),
+so small orange links, eyebrow labels and the 14px bold button text fall short.
+Options: darken small orange text to about `#C22E00` (5.7:1) while keeping
+`#FF3D00` for fills, or raise button text to 16px semibold.
 
 ## Rebuilding the stylesheet
 

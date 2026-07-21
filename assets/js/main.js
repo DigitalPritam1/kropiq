@@ -292,11 +292,87 @@
     });
   }
 
+  /* ------------------------------------------------------------ motion --- */
+
+  var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /** Fade sections in as they enter the viewport. */
+  function scrollReveal() {
+    var items = $$('.reveal');
+    if (!items.length) return;
+
+    if (reducedMotion || !('IntersectionObserver' in window)) {
+      items.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        // Stagger siblings slightly so grids cascade rather than pop as one block.
+        var siblings = Array.prototype.slice.call(entry.target.parentElement.children);
+        var delay = Math.min(siblings.indexOf(entry.target), 5) * 70;
+        setTimeout(function () { entry.target.classList.add('is-visible'); }, delay);
+        io.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+
+    items.forEach(function (el) { io.observe(el); });
+  }
+
+  /** Count stat tiles up to their target the first time they are seen. */
+  function statCounters() {
+    var stats = $$('[data-count-to]');
+    if (!stats.length) return;
+
+    var format = function (n) { return n.toLocaleString('en-US'); };
+
+    var run = function (el) {
+      var target = parseFloat(el.getAttribute('data-count-to'));
+      var suffix = el.getAttribute('data-count-suffix') || '';
+      if (isNaN(target)) return;
+
+      if (reducedMotion) {
+        el.textContent = format(target) + suffix;
+        return;
+      }
+
+      var started = null;
+      var duration = 1400;
+      var step = function (now) {
+        if (started === null) started = now;
+        var p = Math.min((now - started) / duration, 1);
+        // ease-out cubic
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = format(Math.round(target * eased)) + suffix;
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+
+    if (!('IntersectionObserver' in window)) {
+      stats.forEach(run);
+      return;
+    }
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        run(entry.target);
+        io.unobserve(entry.target);
+      });
+    }, { threshold: 0.5 });
+
+    stats.forEach(function (el) { io.observe(el); });
+  }
+
   /* --------------------------------------------------------------- init --- */
 
   function init() {
     mobileNav();
     headerElevation();
+    scrollReveal();
+    statCounters();
     courseFilters();
     aiTutor();
     contactForm();

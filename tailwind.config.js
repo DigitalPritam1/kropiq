@@ -2,7 +2,7 @@
  * KropiQ — canonical design tokens.
  *
  * Reconciles the 13 Stitch page themes into one system built on the official
- * brand sheet: #F25C2A orange, #2B3440 graphite, #FFFFFF white, Inter, 4px/8px radii.
+ * brand sheet: #FF3D00 orange, #2B3440 graphite, #FFFFFF white, Inter, 4px/8px radii.
  * Compiled once to assets/css/kropiq.css — the shipped site loads plain CSS.
  */
 const INTER = ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'];
@@ -14,15 +14,15 @@ module.exports = {
     extend: {
       colors: {
         // --- brand core (strict) ---
-        'brand-orange': '#F25C2A',
+        'brand-orange': '#FF3D00',
         'brand-graphite': '#2B3440',
 
-        primary: '#F25C2A',
+        primary: '#FF3D00',
         'on-primary': '#FFFFFF',
-        'primary-container': '#F25C2A',
+        'primary-container': '#FF3D00',
         'on-primary-container': '#FFFFFF',
-        'surface-tint': '#F25C2A',
-        'inverse-primary': '#FFB59E',
+        'surface-tint': '#FF3D00',
+        'inverse-primary': '#FFB49B',
 
         // --- neutral ladder: white-dominant, graphite-tinted ---
         background: '#FFFFFF',
@@ -62,10 +62,10 @@ module.exports = {
         'on-error-container': '#93000A',
 
         // --- fixed pairs ---
-        'primary-fixed': '#FFE3D9',
-        'primary-fixed-dim': '#FFB59E',
+        'primary-fixed': '#FFE2D8',
+        'primary-fixed-dim': '#FFB49B',
         'on-primary-fixed': '#4A1400',
-        'on-primary-fixed-variant': '#A83616',
+        'on-primary-fixed-variant': '#B32A00',
         'secondary-fixed': '#F0F1F2',
         'secondary-fixed-dim': '#D5D9DE',
         'on-secondary-fixed': '#2B3440',
