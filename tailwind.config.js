@@ -2,10 +2,11 @@
  * KropiQ — canonical design tokens.
  *
  * Reconciles the 13 Stitch page themes into one system built on the official
- * brand sheet: #FF3D00 orange, #2B3440 graphite, #FFFFFF white, Inter, 4px/8px radii.
+ * brand sheet: #FF3D00 orange, #2B3440 graphite, #FFFFFF white, Noto Sans, 4px/8px radii.
  * Compiled once to assets/css/kropiq.css — the shipped site loads plain CSS.
  */
-const INTER = ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'];
+// One family across both scripts: Noto Sans for Latin, Noto Sans Devanagari for Hindi.
+const NOTO = ['Noto Sans', 'Noto Sans Devanagari', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Arial', 'sans-serif'];
 
 module.exports = {
   content: ['./*.html', './assets/js/*.js'],
@@ -109,19 +110,19 @@ module.exports = {
       },
 
       fontFamily: {
-        sans: INTER,
-        'h1-desktop': INTER,
-        'h1-mobile': INTER,
-        h2: INTER,
-        h3: INTER,
-        'display-lg': INTER,
-        'display-lg-mobile': INTER,
-        'headline-lg': INTER,
-        'headline-md': INTER,
-        'body-lg': INTER,
-        'body-md': INTER,
-        'label-md': INTER,
-        'label-sm': INTER,
+        sans: NOTO,
+        'h1-desktop': NOTO,
+        'h1-mobile': NOTO,
+        h2: NOTO,
+        h3: NOTO,
+        'display-lg': NOTO,
+        'display-lg-mobile': NOTO,
+        'headline-lg': NOTO,
+        'headline-md': NOTO,
+        'body-lg': NOTO,
+        'body-md': NOTO,
+        'label-md': NOTO,
+        'label-sm': NOTO,
       },
 
       fontSize: {
