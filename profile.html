@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Student Profile - KropiQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-surface'); font-family: 'Inter', sans-serif; }
+    </style>
+<link href="assets/css/kropiq.css" rel="stylesheet"/>
+<link href="assets/img/favicon.png" rel="icon" type="image/png"/>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+<!-- Site header -->
+<header class="w-full bg-surface border-b border-brand-graphite border-opacity-10 sticky top-0 z-50">
+<div class="flex justify-between items-center gap-unit-md px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-16">
+<a class="inline-flex items-center shrink-0" href="index.html" aria-label="KropiQ home">
+<img alt="KropiQ" class="kropiq-logo" src="assets/img/kropiq-logo.png"/>
+</a>
+<nav class="hidden lg:flex gap-unit-lg items-center" aria-label="Main">
+<a class="font-label-sm text-label-sm text-secondary hover:text-brand-orange transition-colors duration-200" href="courses.html">Courses</a>
+<a class="font-label-sm text-label-sm text-secondary hover:text-brand-orange transition-colors duration-200" href="programs.html">Programs</a>
+<a class="font-label-sm text-label-sm text-secondary hover:text-brand-orange transition-colors duration-200" href="resources.html">Resources</a>
+<a class="font-label-sm text-label-sm text-secondary hover:text-brand-orange transition-colors duration-200" href="pricing.html">Pricing</a>
+<a class="font-label-sm text-label-sm text-secondary hover:text-brand-orange transition-colors duration-200" href="business.html">For Business</a>
+<a class="font-label-sm text-label-sm text-secondary hover:text-brand-orange transition-colors duration-200" href="about.html">About</a>
+</nav>
+<div class="flex items-center gap-unit-sm">
+<a class="hidden sm:inline-flex font-label-sm text-label-sm text-secondary hover:text-brand-orange transition-colors px-3 py-2" href="contact.html">Contact</a>
+<a class="bg-brand-orange text-white font-label-sm text-label-sm px-6 py-2 rounded font-bold hover:shadow-level-2 transition-all" href="pricing.html">Get Started</a>
+<button class="lg:hidden text-brand-graphite p-2 -mr-2" type="button" data-nav-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+<span class="material-symbols-outlined" aria-hidden="true">menu</span>
+</button>
+</div>
+</div>
+<div class="nav-drawer lg:hidden border-t border-brand-graphite border-opacity-10 bg-surface" id="mobile-nav">
+<nav class="flex flex-col px-margin-mobile py-unit-md" aria-label="Mobile">
+<a class="font-body-md text-body-md py-2 text-secondary hover:text-brand-orange transition-colors" href="courses.html">Courses</a>
+<a class="font-body-md text-body-md py-2 text-secondary hover:text-brand-orange transition-colors" href="programs.html">Programs</a>
+<a class="font-body-md text-body-md py-2 text-secondary hover:text-brand-orange transition-colors" href="resources.html">Resources</a>
+<a class="font-body-md text-body-md py-2 text-secondary hover:text-brand-orange transition-colors" href="pricing.html">Pricing</a>
+<a class="font-body-md text-body-md py-2 text-secondary hover:text-brand-orange transition-colors" href="business.html">For Business</a>
+<a class="font-body-md text-body-md py-2 text-secondary hover:text-brand-orange transition-colors" href="about.html">About</a>
+<a class="font-body-md text-body-md py-2 text-secondary hover:text-brand-orange transition-colors" href="contact.html">Contact & Support</a>
+<a class="font-body-md text-body-md py-2 text-brand-orange font-semibold transition-colors" href="profile.html" aria-current="page">My Profile</a>
+<a class="font-body-md text-body-md py-2 text-secondary hover:text-brand-orange transition-colors" href="assignments.html">Assignments</a>
+<a class="font-body-md text-body-md py-2 text-secondary hover:text-brand-orange transition-colors" href="certificates.html">Certificates</a>
+</nav>
+</div>
+</header>
+<!-- TopNavBar Shared Component -->
+
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-unit-2xl grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Sidebar Profile Profile -->
+<aside class="md:col-span-4 space-y-gutter">
+<!-- Profile Card -->
+<div class="bg-surface rounded-xl p-unit-lg shadow-[0_4px_12px_rgba(43,52,64,0.04)] border border-surface-variant flex flex-col items-center text-center">
+<div class="relative w-32 h-32 mb-unit-md">
+<img class="w-full h-full object-cover rounded-full border-4 border-surface shadow-sm" data-alt="A professional, natural-light portrait of a modern farmer wearing a clean work shirt, standing in front of a subtly blurred high-tech greenhouse. The lighting is bright and optimistic, reflecting a modern, corporate agricultural aesthetic with a pure white background tone." src="assets/img/photo-24.jpg"/>
+<div class="absolute bottom-0 right-0 bg-primary text-on-primary p-1.5 rounded-full flex items-center justify-center border-2 border-surface">
+<span class="material-symbols-outlined text-[16px]" data-icon="verified">verified</span>
+</div>
+</div>
+<h1 class="font-h3 text-h3 text-on-surface mb-1">Elias Thorne</h1>
+<p class="font-body-md text-body-md text-secondary mb-unit-lg flex items-center gap-1 justify-center">
+<span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span>
+                    Willamette Valley, OR
+                </p>
+<div class="w-full text-left bg-surface-container-low rounded-lg p-unit-md mb-unit-lg">
+<div class="flex justify-between items-end mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Learning Path</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">Advanced Agronomy</span>
+</div>
+<div class="w-full bg-surface-variant rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 75%"></div>
+</div>
+<p class="font-label-sm text-label-sm text-secondary mt-2 text-right">75% Completed</p>
+</div>
+<div class="grid grid-cols-2 gap-unit-md w-full">
+<div class="bg-surface-container-low p-unit-md rounded-lg flex flex-col items-center border border-surface-variant/50">
+<span class="material-symbols-outlined text-tertiary mb-1" data-icon="timer">timer</span>
+<span class="font-h3 text-h3 text-on-surface">142</span>
+<span class="font-label-sm text-label-sm text-secondary">Hours</span>
+</div>
+<div class="bg-surface-container-low p-unit-md rounded-lg flex flex-col items-center border border-surface-variant/50">
+<span class="material-symbols-outlined text-tertiary mb-1" data-icon="workspace_premium">workspace_premium</span>
+<span class="font-h3 text-h3 text-on-surface">6</span>
+<span class="font-label-sm text-label-sm text-secondary">Courses</span>
+</div>
+</div>
+</div>
+<!-- Contact / Actions -->
+<div class="flex flex-col gap-unit-sm">
+<button class="w-full bg-surface text-primary border border-primary font-label-sm text-label-sm px-4 py-3 rounded flex items-center justify-center gap-2 hover:bg-surface-container-lowest transition-colors">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+                    Download Portfolio
+                </button>
+</div>
+</aside>
+<!-- Main Canvas -->
+<div class="md:col-span-8 space-y-unit-2xl">
+<!-- Skills Mastered -->
+<section>
+<h2 class="font-h2 text-h2 text-on-surface mb-unit-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="military_tech">military_tech</span>
+                    Skills Mastered
+                </h2>
+<div class="flex flex-wrap gap-unit-sm">
+<span class="bg-surface-container-highest text-on-surface font-label-sm text-label-sm px-4 py-2 rounded-full flex items-center gap-2 border border-surface-variant">
+<span class="material-symbols-outlined text-[18px] text-tertiary" data-icon="water_drop">water_drop</span>
+                        Precision Irrigation
+                    </span>
+<span class="bg-surface-container-highest text-on-surface font-label-sm text-label-sm px-4 py-2 rounded-full flex items-center gap-2 border border-surface-variant">
+<span class="material-symbols-outlined text-[18px] text-tertiary" data-icon="grass">grass</span>
+                        Soil Science
+                    </span>
+<span class="bg-surface-container-highest text-on-surface font-label-sm text-label-sm px-4 py-2 rounded-full flex items-center gap-2 border border-surface-variant">
+<span class="material-symbols-outlined text-[18px] text-tertiary" data-icon="satellite_alt">satellite_alt</span>
+                        Drone Mapping
+                    </span>
+<span class="bg-surface-container-highest text-on-surface font-label-sm text-label-sm px-4 py-2 rounded-full flex items-center gap-2 border border-surface-variant">
+<span class="material-symbols-outlined text-[18px] text-tertiary" data-icon="query_stats">query_stats</span>
+                        Yield Forecasting
+                    </span>
+<span class="bg-surface-container-highest text-on-surface font-label-sm text-label-sm px-4 py-2 rounded-full flex items-center gap-2 border border-surface-variant">
+<span class="material-symbols-outlined text-[18px] text-tertiary" data-icon="eco">eco</span>
+                        Sustainable Crop Rotation
+                    </span>
+</div>
+</section>
+<!-- Active Courses -->
+<section>
+<div class="flex justify-between items-end mb-unit-lg">
+<h2 class="font-h2 text-h2 text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="school">school</span>
+                        Active Courses
+                    </h2>
+<a class="font-label-sm text-label-sm text-primary hover:underline" href="courses.html">View Catalog</a>
+</div>
+<div class="grid grid-cols-1 gap-unit-md">
+<!-- Course Card 1 -->
+<div class="bg-surface border border-surface-variant rounded-xl p-unit-md flex flex-col sm:flex-row gap-unit-lg items-start sm:items-center shadow-[0_2px_8px_rgba(43,52,64,0.03)] hover:shadow-[0_8px_24px_rgba(43,52,64,0.08)] transition-shadow">
+<div class="w-full sm:w-48 h-32 shrink-0 rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="A high-resolution, bright photo of a tablet displaying a complex data dashboard with green and orange graphs, being held by hands wearing clean leather work gloves over a field of young crops. Corporate modern minimalism, pure white sunlight." src="assets/img/photo-10.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/60 to-transparent"></div>
+<span class="absolute bottom-2 left-2 text-on-primary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="play_circle">play_circle</span>
+                                Module 4
+                            </span>
+</div>
+<div class="flex-grow w-full">
+<h3 class="font-h3 text-h3 text-on-surface mb-1">AI-Driven Pest Management</h3>
+<p class="font-body-md text-body-md text-secondary mb-4">Mastering early detection models using multi-spectral imaging.</p>
+<div class="flex items-center gap-4">
+<div class="flex-grow bg-surface-variant rounded-full h-1.5">
+<div class="bg-primary h-1.5 rounded-full" style="width: 40%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary shrink-0">40%</span>
+<button class="shrink-0 bg-transparent border border-primary text-primary font-label-sm text-label-sm px-3 py-1.5 rounded hover:bg-primary hover:text-on-primary transition-colors">
+                                    Continue
+                                </button>
+</div>
+</div>
+</div>
+<!-- Course Card 2 -->
+<div class="bg-surface border border-surface-variant rounded-xl p-unit-md flex flex-col sm:flex-row gap-unit-lg items-start sm:items-center shadow-[0_2px_8px_rgba(43,52,64,0.03)] hover:shadow-[0_8px_24px_rgba(43,52,64,0.08)] transition-shadow">
+<div class="w-full sm:w-48 h-32 shrink-0 rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="A close-up shot of a sophisticated, modern automated irrigation valve in a pristine field. The equipment is sleek and metallic, illuminated by bright daylight. The scene emphasizes precision engineering and clean technology in agriculture, adhering to a minimalist aesthetic." src="assets/img/photo-29.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/60 to-transparent"></div>
+<span class="absolute bottom-2 left-2 text-on-primary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="play_circle">play_circle</span>
+                                Module 2
+                            </span>
+</div>
+<div class="flex-grow w-full">
+<h3 class="font-h3 text-h3 text-on-surface mb-1">Climate-Resilient Hydrology</h3>
+<p class="font-body-md text-body-md text-secondary mb-4">Advanced water conservation techniques for arid climates.</p>
+<div class="flex items-center gap-4">
+<div class="flex-grow bg-surface-variant rounded-full h-1.5">
+<div class="bg-primary h-1.5 rounded-full" style="width: 15%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary shrink-0">15%</span>
+<button class="shrink-0 bg-transparent border border-primary text-primary font-label-sm text-label-sm px-3 py-1.5 rounded hover:bg-primary hover:text-on-primary transition-colors">
+                                    Continue
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Project Showcase -->
+<section>
+<h2 class="font-h2 text-h2 text-on-surface mb-unit-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="view_carousel">view_carousel</span>
+                    Project Showcase
+                </h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter">
+<!-- Project 1 -->
+<div class="bg-surface border border-surface-variant rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(43,52,64,0.04)] group cursor-pointer">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An aerial view of a meticulously organized, geometric farm layout showing contrasting zones of crops. A modern agricultural drone hovers in the top right corner. The lighting is crisp, emphasizing the precision and technological scale of the operation against a bright landscape." src="assets/img/photo-15.jpg"/>
+</div>
+<div class="p-unit-lg">
+<span class="font-label-sm text-label-sm text-tertiary mb-2 block">Implementation</span>
+<h3 class="font-h3 text-h3 text-on-surface mb-2">Automated Variable Rate Seeding</h3>
+<p class="font-body-md text-body-md text-secondary">Deployed AI-driven seeding plans based on historic yield maps, resulting in a 12% input cost reduction across 500 acres.</p>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="bg-surface border border-surface-variant rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(43,52,64,0.04)] group cursor-pointer">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A clean, modern laboratory setting showing plant samples under glowing LED grow lights. The environment is sterile and high-tech, featuring stainless steel surfaces and white backgrounds, illustrating a scientific, analytical approach to modern agronomy." src="assets/img/photo-31.jpg"/>
+</div>
+<div class="p-unit-lg">
+<span class="font-label-sm text-label-sm text-tertiary mb-2 block">Research</span>
+<h3 class="font-h3 text-h3 text-on-surface mb-2">Nitrogen Optimization Trial</h3>
+<p class="font-body-md text-body-md text-secondary">A 6-month capstone study on tissue sampling and real-time nutrient adjustment to minimize runoff.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer Shared Component -->
+
+<!-- Site footer -->
+<footer class="w-full bg-surface-container-low border-t border-brand-graphite border-opacity-10 mt-auto">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-unit-2xl grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-4 flex flex-col gap-unit-md">
+<a class="inline-flex items-center shrink-0" href="index.html" aria-label="KropiQ home">
+<img alt="KropiQ" class="kropiq-logo" src="assets/img/kropiq-logo.png"/>
+</a>
+<p class="font-body-md text-body-md text-secondary max-w-sm">The world's premier AI-native platform for agricultural professionals — blending traditional agronomy with precision technology.</p>
+<div class="flex gap-unit-sm">
+<a class="text-secondary hover:text-brand-orange transition-colors" href="contact.html" aria-label="Contact KropiQ"><span class="material-symbols-outlined" aria-hidden="true">mail</span></a>
+<a class="text-secondary hover:text-brand-orange transition-colors" href="contact.html" aria-label="Share"><span class="material-symbols-outlined" aria-hidden="true">share</span></a>
+</div>
+</div>
+<div class="md:col-span-8 grid grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="flex flex-col gap-unit-sm">
+<h3 class="font-label-sm text-label-sm font-semibold text-brand-graphite uppercase">Learn</h3>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="courses.html">Course Catalog</a>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="programs.html">Programs</a>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="program-detail.html">Program Details</a>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="ai-tutor.html">AI Tutor</a>
+</div>
+<div class="flex flex-col gap-unit-sm">
+<h3 class="font-label-sm text-label-sm font-semibold text-brand-graphite uppercase">Company</h3>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="about.html">About Us</a>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="business.html">For Business</a>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="resources.html">Resources</a>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="contact.html">Contact & Support</a>
+</div>
+<div class="flex flex-col gap-unit-sm">
+<h3 class="font-label-sm text-label-sm font-semibold text-brand-graphite uppercase">Account</h3>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="profile.html">My Profile</a>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="assignments.html">Assignments</a>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="certificates.html">Certificates</a>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="pricing.html">Pricing & Plans</a>
+</div>
+<div class="flex flex-col gap-unit-sm">
+<h3 class="font-label-sm text-label-sm font-semibold text-brand-graphite uppercase">Legal</h3>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="#">Site Map</a>
+</div>
+</div>
+<div class="md:col-span-12 pt-unit-lg border-t border-brand-graphite border-opacity-10 flex flex-col md:flex-row justify-between items-center gap-unit-sm">
+<p class="font-label-sm text-label-sm text-secondary">© 2026 KropiQ Education Private Limited. All rights reserved.</p>
+<p class="font-label-sm text-label-sm text-secondary">Built for the future of farming.</p>
+</div>
+</div>
+</footer>
+<script defer src="assets/js/main.js"></script>
+</body></html>

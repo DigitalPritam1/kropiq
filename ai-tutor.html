@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KropiQ AI Tutor Deep-Dive</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { background-color: #f9f9f9; }
+        .ambient-shadow { box-shadow: 0 4px 12px rgba(43, 52, 64, 0.08); }
+        .glass-panel { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
+        /* Custom scrollbar for chat */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #dadada; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #bec7d6; }
+    </style>
+<link href="assets/css/kropiq.css" rel="stylesheet"/>
+<link href="assets/img/favicon.png" rel="icon" type="image/png"/>
+</head>
+<body class="text-on-surface font-body-md bg-background flex flex-col h-screen overflow-hidden">
+<!-- Top Navigation (Shell suppressed for deep-dive/task focus, minimal header retained for context) -->
+<header class="w-full h-16 bg-surface shadow-sm flex justify-between items-center px-margin-desktop shrink-0 z-10 relative">
+<div class="flex items-center gap-unit-md">
+<a class="text-secondary hover:text-primary transition-colors flex items-center gap-2 group" href="program-detail.html">
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:-translate-x-1">arrow_back</span>
+<span class="font-label-sm text-label-sm">Back to Course</span>
+</a>
+<div class="h-6 w-px bg-surface-variant mx-2"></div>
+<a class="inline-flex items-center shrink-0" href="index.html" aria-label="KropiQ home"><img alt="KropiQ" class="kropiq-logo" src="assets/img/kropiq-logo.png"/></a>
+<span class="bg-primary-container text-on-primary-container font-label-sm text-label-sm px-2 py-1 rounded ml-2">AI Tutor</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-surface-container-high text-on-surface font-label-sm text-label-sm px-4 py-2 rounded border border-outline-variant hover:bg-surface-variant transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">bookmark</span>
+                Save Session
+            </button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex overflow-hidden">
+<!-- Left Panel: Context & Data (Bento Grid Style) -->
+<aside class="hidden lg:flex flex-col w-[400px] xl:w-[480px] h-full bg-surface-container-low border-r border-surface-variant overflow-y-auto p-unit-lg gap-unit-lg shrink-0">
+<div class="mb-2">
+<h2 class="font-h3 text-h3 text-on-surface mb-1">Context Analysis</h2>
+<p class="font-body-md text-body-md text-secondary">Module 4: Precision Irrigation</p>
+</div>
+<!-- Bento Item 1: Lesson Reference -->
+<div class="bg-surface rounded-xl ambient-shadow p-unit-lg flex flex-col gap-4 border border-[rgba(43,52,64,0.1)]">
+<div class="flex items-center gap-3 border-b border-surface-variant pb-3">
+<span class="material-symbols-outlined text-tertiary">menu_book</span>
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Current Lesson References</h3>
+</div>
+<div class="flex flex-col gap-3">
+<div class="p-3 bg-surface-container rounded-lg border border-transparent hover:border-primary transition-colors cursor-pointer group">
+<h4 class="font-label-sm text-label-sm text-on-surface font-semibold mb-1 group-hover:text-primary transition-colors">Evapotranspiration Rates</h4>
+<p class="font-body-md text-body-md text-secondary text-sm">Review section 4.2 detailing the Penman-Monteith equation for localized micro-climates.</p>
+</div>
+<div class="p-3 bg-surface-container rounded-lg border border-transparent hover:border-primary transition-colors cursor-pointer group">
+<h4 class="font-label-sm text-label-sm text-on-surface font-semibold mb-1 group-hover:text-primary transition-colors">Sensor Calibration</h4>
+<p class="font-body-md text-body-md text-secondary text-sm">Step-by-step guide on calibrating TDR soil moisture sensors before deployment.</p>
+</div>
+</div>
+</div>
+<!-- Bento Item 2: Live Data / Visuals -->
+<div class="bg-surface rounded-xl ambient-shadow p-unit-lg flex flex-col gap-4 border border-[rgba(43,52,64,0.1)]">
+<div class="flex items-center justify-between border-b border-surface-variant pb-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">monitoring</span>
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Relevant Farming Data</h3>
+</div>
+<span class="bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-2 py-0.5 rounded text-xs">Live</span>
+</div>
+<div class="relative w-full h-48 rounded-lg overflow-hidden bg-surface-container">
+<!-- Simulated Chart Image -->
+<img class="object-cover w-full h-full opacity-80" data-alt="A clean, modern data visualization chart showing a soil moisture graph over time. The graph uses bright orange and deep graphite lines on a crisp white background, typical of high-end SaaS dashboards. The style is minimalist, sharp, and corporate, fitting an advanced agricultural tech platform." src="assets/img/photo-35.jpg"/>
+<!-- Overlay Stats -->
+<div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur rounded p-2 shadow-sm">
+<p class="font-label-sm text-label-sm text-secondary text-xs">Avg Moisture</p>
+<p class="font-body-lg text-body-lg font-semibold text-primary">24.5% <span class="text-xs text-secondary font-normal">(-1.2%)</span></p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-secondary text-sm">Zone A real-time telemetry indicating a slight deficit compared to the predictive model.</p>
+</div>
+<!-- Bento Item 3: Quick Actions -->
+<div class="bg-surface rounded-xl ambient-shadow p-unit-lg flex flex-col gap-3 border border-[rgba(43,52,64,0.1)]">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-2">Suggested Queries</h3>
+<button class="text-left font-body-md text-body-md text-on-surface bg-surface-container hover:bg-surface-variant px-4 py-3 rounded-lg border border-transparent hover:border-outline-variant transition-all flex justify-between items-center group">
+                     How does soil type affect this reading?
+                     <span class="material-symbols-outlined text-secondary opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+</button>
+<button class="text-left font-body-md text-body-md text-on-surface bg-surface-container hover:bg-surface-variant px-4 py-3 rounded-lg border border-transparent hover:border-outline-variant transition-all flex justify-between items-center group">
+                     Generate a revised irrigation schedule
+                     <span class="material-symbols-outlined text-secondary opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+</button>
+</div>
+</aside>
+<!-- Right Panel: Chat Interface -->
+<section class="flex-1 flex flex-col bg-surface relative">
+<!-- Chat Header -->
+<div class="h-16 border-b border-surface-variant flex items-center px-gutter shrink-0 bg-surface/80 backdrop-blur z-10 absolute top-0 w-full">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-on-primary">smart_toy</span>
+</div>
+<div>
+<h2 class="font-body-lg text-body-lg font-semibold text-on-surface leading-tight">KropiQ Assistant</h2>
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+<span class="font-label-sm text-label-sm text-secondary text-xs">Online</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Chat History -->
+<div class="flex-1 overflow-y-auto px-gutter pt-24 pb-32 flex flex-col gap-8 scroll-smooth" id="chat-container">
+<!-- System/Context Message -->
+<div class="flex justify-center">
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-low px-4 py-1 rounded-full text-xs">Context initialized: Precision Irrigation Module</span>
+</div>
+<!-- AI Message -->
+<div class="flex items-start gap-4 max-w-[85%]">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-on-primary text-[18px]">smart_toy</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="bg-surface-container-low border border-surface-variant rounded-2xl rounded-tl-sm p-4 text-on-surface font-body-md text-body-md ambient-shadow">
+<p>Hello. I've loaded the context for Module 4 and the live telemetry from Zone A. I noticed the average soil moisture has dropped to 24.5%, which is slightly below our target threshold for this growth stage.</p>
+<p class="mt-3">How can I help you adjust your strategy today?</p>
+</div>
+<span class="font-label-sm text-label-sm text-secondary text-xs ml-1">10:42 AM</span>
+</div>
+</div>
+<!-- User Message -->
+<div class="flex items-start gap-4 max-w-[85%] self-end flex-row-reverse">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-on-secondary-container text-[18px]">person</span>
+</div>
+<div class="flex flex-col gap-2 items-end">
+<div class="bg-primary text-on-primary rounded-2xl rounded-tr-sm p-4 font-body-md text-body-md shadow-md">
+<p>Considering the sandy loam soil in Zone A, should we increase the frequency or duration of the irrigation cycles?</p>
+</div>
+<span class="font-label-sm text-label-sm text-secondary text-xs mr-1">10:45 AM</span>
+</div>
+</div>
+<!-- AI Message with rich content -->
+<div class="flex items-start gap-4 max-w-[85%]">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-on-primary text-[18px]">smart_toy</span>
+</div>
+<div class="flex flex-col gap-2 w-full">
+<div class="bg-surface-container-low border border-surface-variant rounded-2xl rounded-tl-sm p-4 text-on-surface font-body-md text-body-md ambient-shadow">
+<p>For sandy loam, which has a higher infiltration rate and lower water-holding capacity, it is generally better to increase <strong>frequency</strong> rather than duration.</p>
+<div class="bg-white border border-outline-variant rounded-lg p-4 mt-4 mb-2">
+<h4 class="font-label-sm text-label-sm font-semibold mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">science</span>
+                                    Agronomic Insight
+                                </h4>
+<p class="text-sm text-secondary">Increasing duration in sandy loam often leads to deep percolation past the root zone, wasting water and potentially leaching nutrients. Shorter, more frequent pulses maintain moisture within the active root zone.</p>
+</div>
+<p>Would you like me to draft a revised pulse-irrigation schedule based on the Penman-Monteith data currently in the context panel?</p>
+</div>
+<!-- Action Chips -->
+<div class="flex gap-2 mt-1 ml-1 flex-wrap">
+<button class="bg-surface-container border border-outline-variant hover:border-primary hover:text-primary text-secondary font-label-sm text-label-sm px-3 py-1.5 rounded-full transition-colors bg-white">Yes, draft the schedule</button>
+<button class="bg-surface-container border border-outline-variant hover:border-primary hover:text-primary text-secondary font-label-sm text-label-sm px-3 py-1.5 rounded-full transition-colors bg-white">Explain deep percolation</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Input Area -->
+<div class="absolute bottom-0 w-full bg-gradient-to-t from-surface via-surface to-transparent pt-12 pb-6 px-gutter">
+<div class="max-w-3xl mx-auto">
+<div class="relative bg-white rounded-xl ambient-shadow border border-surface-variant focus-within:border-primary transition-colors flex items-end p-2">
+<button class="p-2 text-secondary hover:text-primary transition-colors rounded-lg hover:bg-surface-container self-end mb-1">
+<span class="material-symbols-outlined">attach_file</span>
+</button>
+<textarea class="w-full bg-transparent border-none focus:ring-0 resize-none font-body-md text-body-md text-on-surface py-3 px-2 max-h-32" oninput="this.style.height = ''; this.style.height = this.scrollHeight + 'px'" placeholder="Ask follow-up questions or request analysis..." rows="1"></textarea>
+<div class="flex gap-1 self-end mb-1 ml-2">
+<button class="p-2 text-secondary hover:text-primary transition-colors rounded-lg hover:bg-surface-container">
+<span class="material-symbols-outlined">mic</span>
+</button>
+<button class="p-2 bg-primary text-on-primary rounded-lg hover:bg-surface-tint transition-colors shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+</div>
+</div>
+<div class="text-center mt-2">
+<span class="font-label-sm text-label-sm text-secondary text-xs">AI can make mistakes. Verify critical agronomic decisions.</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<script defer src="assets/js/main.js"></script>
+</body></html>

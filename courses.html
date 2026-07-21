@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Course Catalog - KropiQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/kropiq.css" rel="stylesheet"/>
+<link href="assets/img/favicon.png" rel="icon" type="image/png"/>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col">
+<!-- Site header -->
+<header class="w-full bg-surface border-b border-brand-graphite border-opacity-10 sticky top-0 z-50">
+<div class="flex justify-between items-center gap-unit-md px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-16">
+<a class="inline-flex items-center shrink-0" href="index.html" aria-label="KropiQ home">
+<img alt="KropiQ" class="kropiq-logo" src="assets/img/kropiq-logo.png"/>
+</a>
+<nav class="hidden lg:flex gap-unit-lg items-center" aria-label="Main">
+<a class="font-label-sm text-label-sm text-brand-orange font-semibold border-b-2 border-brand-orange pb-1 transition-colors duration-200" href="courses.html" aria-current="page">Courses</a>
+<a class="font-label-sm text-label-sm text-secondary hover:text-brand-orange transition-colors duration-200" href="programs.html">Programs</a>
+<a class="font-label-sm text-label-sm text-secondary hover:text-brand-orange transition-colors duration-200" href="resources.html">Resources</a>
+<a class="font-label-sm text-label-sm text-secondary hover:text-brand-orange transition-colors duration-200" href="pricing.html">Pricing</a>
+<a class="font-label-sm text-label-sm text-secondary hover:text-brand-orange transition-colors duration-200" href="business.html">For Business</a>
+<a class="font-label-sm text-label-sm text-secondary hover:text-brand-orange transition-colors duration-200" href="about.html">About</a>
+</nav>
+<div class="flex items-center gap-unit-sm">
+<a class="hidden sm:inline-flex font-label-sm text-label-sm text-secondary hover:text-brand-orange transition-colors px-3 py-2" href="contact.html">Contact</a>
+<a class="bg-brand-orange text-white font-label-sm text-label-sm px-6 py-2 rounded font-bold hover:shadow-level-2 transition-all" href="pricing.html">Get Started</a>
+<button class="lg:hidden text-brand-graphite p-2 -mr-2" type="button" data-nav-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+<span class="material-symbols-outlined" aria-hidden="true">menu</span>
+</button>
+</div>
+</div>
+<div class="nav-drawer lg:hidden border-t border-brand-graphite border-opacity-10 bg-surface" id="mobile-nav">
+<nav class="flex flex-col px-margin-mobile py-unit-md" aria-label="Mobile">
+<a class="font-body-md text-body-md py-2 text-brand-orange font-semibold transition-colors" href="courses.html" aria-current="page">Courses</a>
+<a class="font-body-md text-body-md py-2 text-secondary hover:text-brand-orange transition-colors" href="programs.html">Programs</a>
+<a class="font-body-md text-body-md py-2 text-secondary hover:text-brand-orange transition-colors" href="resources.html">Resources</a>
+<a class="font-body-md text-body-md py-2 text-secondary hover:text-brand-orange transition-colors" href="pricing.html">Pricing</a>
+<a class="font-body-md text-body-md py-2 text-secondary hover:text-brand-orange transition-colors" href="business.html">For Business</a>
+<a class="font-body-md text-body-md py-2 text-secondary hover:text-brand-orange transition-colors" href="about.html">About</a>
+<a class="font-body-md text-body-md py-2 text-secondary hover:text-brand-orange transition-colors" href="contact.html">Contact & Support</a>
+<a class="font-body-md text-body-md py-2 text-secondary hover:text-brand-orange transition-colors" href="profile.html">My Profile</a>
+<a class="font-body-md text-body-md py-2 text-secondary hover:text-brand-orange transition-colors" href="assignments.html">Assignments</a>
+<a class="font-body-md text-body-md py-2 text-secondary hover:text-brand-orange transition-colors" href="certificates.html">Certificates</a>
+</nav>
+</div>
+</header>
+<!-- TopNavBar -->
+
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-[1440px] mx-auto px-margin md:px-xl py-xl grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Sidebar Filters -->
+<aside class="md:col-span-3 space-y-md">
+<div class="bg-surface-container-lowest rounded-DEFAULT border border-surface-variant p-md">
+<div class="flex items-center justify-between border-b border-surface-variant pb-sm mb-sm">
+<h3 class="font-headline-md text-headline-md text-on-surface">Filters</h3>
+<button class="text-primary font-label-md text-label-md hover:underline focus:outline-none focus:ring-2 focus:ring-primary rounded-DEFAULT">Clear All</button>
+</div>
+<!-- Category Filter -->
+<div class="mb-md">
+<h4 class="font-label-md text-label-md text-on-surface mb-sm uppercase tracking-wider">Category</h4>
+<div class="space-y-xs">
+<label class="flex items-center gap-sm cursor-pointer group">
+<input checked="" class="w-4 h-4 text-primary border-outline rounded-DEFAULT focus:ring-primary focus:ring-offset-1" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Data Science (124)</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-4 h-4 text-primary border-outline rounded-DEFAULT focus:ring-primary focus:ring-offset-1" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Machine Learning (85)</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-4 h-4 text-primary border-outline rounded-DEFAULT focus:ring-primary focus:ring-offset-1" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Management (210)</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-4 h-4 text-primary border-outline rounded-DEFAULT focus:ring-primary focus:ring-offset-1" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Software IT (156)</span>
+</label>
+</div>
+</div>
+<!-- Duration Filter -->
+<div class="mb-md">
+<h4 class="font-label-md text-label-md text-on-surface mb-sm uppercase tracking-wider">Duration</h4>
+<div class="space-y-xs">
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-4 h-4 text-primary border-outline rounded-DEFAULT focus:ring-primary focus:ring-offset-1" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">0 - 3 Months</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-4 h-4 text-primary border-outline rounded-DEFAULT focus:ring-primary focus:ring-offset-1" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">3 - 6 Months</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-4 h-4 text-primary border-outline rounded-DEFAULT focus:ring-primary focus:ring-offset-1" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">6 - 12 Months</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-4 h-4 text-primary border-outline rounded-DEFAULT focus:ring-primary focus:ring-offset-1" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">12+ Months</span>
+</label>
+</div>
+</div>
+<!-- University Filter -->
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-sm uppercase tracking-wider">University Partner</h4>
+<div class="space-y-xs">
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-4 h-4 text-primary border-outline rounded-DEFAULT focus:ring-primary focus:ring-offset-1" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Duke CE</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-4 h-4 text-primary border-outline rounded-DEFAULT focus:ring-primary focus:ring-offset-1" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">IIIT Bangalore</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-4 h-4 text-primary border-outline rounded-DEFAULT focus:ring-primary focus:ring-offset-1" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Liverpool John Moores</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-4 h-4 text-primary border-outline rounded-DEFAULT focus:ring-primary focus:ring-offset-1" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Deakin University</span>
+</label>
+</div>
+</div>
+</div>
+</aside>
+<!-- Course Grid -->
+<section class="md:col-span-9">
+<div class="flex justify-between items-end mb-md">
+<div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface tracking-tight">Explore Courses</h1>
+<p class="font-body-lg text-body-lg text-secondary mt-xs">Showing 124 results for "Data Science"</p>
+</div>
+<div class="hidden sm:flex items-center gap-sm">
+<span class="font-label-md text-label-md text-secondary">Sort by:</span>
+<select class="bg-surface-container border border-outline-variant rounded-DEFAULT px-sm py-xs font-label-md text-label-md text-on-surface focus:ring-2 focus:ring-primary focus:border-primary">
+<option>Recommended</option>
+<option>Newest</option>
+<option>Price: Low to High</option>
+<option>Duration: Shortest</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-md">
+<!-- Course Card 1 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT border border-surface-variant overflow-hidden hover:shadow-[0px_4px_12px_rgba(0,0,0,0.05)] transition-shadow duration-300 flex flex-col h-full group focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2">
+<div class="relative h-48 overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional stock photo showing a diverse group of adults intently looking at a large interactive data visualization dashboard in a modern, brightly lit corporate training room. The scene conveys focused learning, collaboration, and advanced technology in a corporate setting. High key lighting, clean composition, crisp focus." src="assets/img/photo-12.jpg"/>
+<div class="absolute top-sm left-sm bg-surface-container-lowest/90 backdrop-blur-sm px-xs py-1 rounded-DEFAULT font-label-sm text-label-sm text-primary uppercase tracking-wider shadow-sm">Bestseller</div>
+<div class="absolute bottom-sm right-sm bg-surface-container-lowest/90 backdrop-blur-sm p-1 rounded-DEFAULT shadow-sm">
+<img class="h-8 w-8 object-contain" data-alt="A clean, minimalist vector logo of a fictitious university named IIITB, featuring a stylized open book inside a geometric shield shape. Dark blue and white colors, crisp lines, corporate academic aesthetic." src="assets/img/photo-08.jpg"/>
+</div>
+</div>
+<div class="p-sm flex flex-col flex-grow">
+<div class="flex gap-2 mb-xs flex-wrap">
+<span class="bg-surface-container-low text-secondary px-2 py-1 rounded-DEFAULT font-label-sm text-label-sm">Data Science</span>
+<span class="bg-surface-container-low text-secondary px-2 py-1 rounded-DEFAULT font-label-sm text-label-sm">12 Months</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs group-hover:text-primary transition-colors line-clamp-2"><a class="focus:outline-none" href="program-detail.html">Executive PG Programme in Data Science</a></h3>
+<p class="font-body-md text-body-md text-secondary line-clamp-2 mb-md">Master Data Science with IIIT Bangalore. Learn Python, SQL, Machine Learning, and more.</p>
+<div class="mt-auto space-y-sm">
+<div class="flex items-center gap-xs text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span>Starts Aug 15</span>
+</div>
+<div class="flex items-center justify-between border-t border-surface-variant pt-sm mt-sm">
+<div>
+<span class="font-label-sm text-label-sm text-secondary block">EMI Starts at</span>
+<span class="font-headline-md text-[20px] text-on-surface font-semibold">₹5,499<span class="text-body-md font-normal text-secondary">/mo</span></span>
+</div>
+<a class="px-sm py-xs border border-on-surface text-on-surface rounded-DEFAULT hover:bg-surface-container-low transition-colors font-label-md text-label-md" href="program-detail.html" tabindex="-1">View Program</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Course Card 2 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT border border-surface-variant overflow-hidden hover:shadow-[0px_4px_12px_rgba(0,0,0,0.05)] transition-shadow duration-300 flex flex-col h-full group focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2">
+<div class="relative h-48 overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A bright, modern workspace featuring a sleek laptop displaying complex coding structures on the screen, accompanied by a steaming cup of coffee and a stylized notepad. The setting is a minimalist home office with natural light pouring in, suggesting remote learning and advanced programming skills." src="assets/img/photo-18.jpg"/>
+<div class="absolute bottom-sm right-sm bg-surface-container-lowest/90 backdrop-blur-sm p-1 rounded-DEFAULT shadow-sm">
+<img class="h-8 w-8 object-contain" data-alt="A sophisticated crest logo for a fictitious institution named LJMU, using deep crimson and gold tones, featuring a stylized eagle. Classic academic elegance combined with modern vector rendering." src="assets/img/photo-16.jpg"/>
+</div>
+</div>
+<div class="p-sm flex flex-col flex-grow">
+<div class="flex gap-2 mb-xs flex-wrap">
+<span class="bg-surface-container-low text-secondary px-2 py-1 rounded-DEFAULT font-label-sm text-label-sm">Machine Learning</span>
+<span class="bg-surface-container-low text-secondary px-2 py-1 rounded-DEFAULT font-label-sm text-label-sm">18 Months</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs group-hover:text-primary transition-colors line-clamp-2"><a class="focus:outline-none" href="program-detail.html">Master of Science in Machine Learning &amp; AI</a></h3>
+<p class="font-body-md text-body-md text-secondary line-clamp-2 mb-md">Earn a UK Master's degree. Specialize in Deep Learning, NLP, and Computer Vision.</p>
+<div class="mt-auto space-y-sm">
+<div class="flex items-center gap-xs text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span>Starts Sep 01</span>
+</div>
+<div class="flex items-center justify-between border-t border-surface-variant pt-sm mt-sm">
+<div>
+<span class="font-label-sm text-label-sm text-secondary block">EMI Starts at</span>
+<span class="font-headline-md text-[20px] text-on-surface font-semibold">₹7,200<span class="text-body-md font-normal text-secondary">/mo</span></span>
+</div>
+<a class="px-sm py-xs border border-on-surface text-on-surface rounded-DEFAULT hover:bg-surface-container-low transition-colors font-label-md text-label-md" href="program-detail.html" tabindex="-1">View Program</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Course Card 3 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT border border-surface-variant overflow-hidden hover:shadow-[0px_4px_12px_rgba(0,0,0,0.05)] transition-shadow duration-300 flex flex-col h-full group focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2">
+<div class="relative h-48 overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A modern, abstract digital illustration representing data flows and analytics. Vibrant geometric shapes, intersecting lines, and soft glowing nodes over a subtle light background. The style is clean, corporate tech, and dynamic, representing big data analysis." src="assets/img/photo-11.jpg"/>
+<div class="absolute bottom-sm right-sm bg-surface-container-lowest/90 backdrop-blur-sm p-1 rounded-DEFAULT shadow-sm">
+<img class="h-8 w-8 object-contain" data-alt="A clean, minimalist vector logo of a fictitious university named IIITB, featuring a stylized open book inside a geometric shield shape. Dark blue and white colors, crisp lines, corporate academic aesthetic." src="assets/img/photo-07.jpg"/>
+</div>
+</div>
+<div class="p-sm flex flex-col flex-grow">
+<div class="flex gap-2 mb-xs flex-wrap">
+<span class="bg-surface-container-low text-secondary px-2 py-1 rounded-DEFAULT font-label-sm text-label-sm">Data Analytics</span>
+<span class="bg-surface-container-low text-secondary px-2 py-1 rounded-DEFAULT font-label-sm text-label-sm">6 Months</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs group-hover:text-primary transition-colors line-clamp-2"><a class="focus:outline-none" href="program-detail.html">Advanced Certificate in Data Analytics</a></h3>
+<p class="font-body-md text-body-md text-secondary line-clamp-2 mb-md">Build a strong foundation in analytics tools. Learn Tableau, Excel, and SQL for business insights.</p>
+<div class="mt-auto space-y-sm">
+<div class="flex items-center gap-xs text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span>Starts Aug 28</span>
+</div>
+<div class="flex items-center justify-between border-t border-surface-variant pt-sm mt-sm">
+<div>
+<span class="font-label-sm text-label-sm text-secondary block">EMI Starts at</span>
+<span class="font-headline-md text-[20px] text-on-surface font-semibold">₹3,500<span class="text-body-md font-normal text-secondary">/mo</span></span>
+</div>
+<a class="px-sm py-xs border border-on-surface text-on-surface rounded-DEFAULT hover:bg-surface-container-low transition-colors font-label-md text-label-md" href="program-detail.html" tabindex="-1">View Program</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Course Card 4 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT border border-surface-variant overflow-hidden hover:shadow-[0px_4px_12px_rgba(0,0,0,0.05)] transition-shadow duration-300 flex flex-col h-full group focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2">
+<div class="relative h-48 overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional photograph of a young woman smiling confidently, wearing a modern business suit, standing in front of a sleek glass office building. Bright, natural daylight, soft bokeh background. Represents a successful career transition." src="assets/img/photo-20.jpg"/>
+<div class="absolute top-sm left-sm bg-surface-container-lowest/90 backdrop-blur-sm px-xs py-1 rounded-DEFAULT font-label-sm text-label-sm text-primary uppercase tracking-wider shadow-sm">New</div>
+<div class="absolute bottom-sm right-sm bg-surface-container-lowest/90 backdrop-blur-sm p-1 rounded-DEFAULT shadow-sm">
+<img class="h-8 w-8 object-contain" data-alt="A modern crest logo for a fictitious institution named Deakin, featuring an abstract geometric tree symbolizing growth and knowledge, rendered in teal and navy blue." src="assets/img/photo-27.jpg"/>
+</div>
+</div>
+<div class="p-sm flex flex-col flex-grow">
+<div class="flex gap-2 mb-xs flex-wrap">
+<span class="bg-surface-container-low text-secondary px-2 py-1 rounded-DEFAULT font-label-sm text-label-sm">Business Analytics</span>
+<span class="bg-surface-container-low text-secondary px-2 py-1 rounded-DEFAULT font-label-sm text-label-sm">11 Months</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs group-hover:text-primary transition-colors line-clamp-2"><a class="focus:outline-none" href="program-detail.html">PG Program in Business Analytics</a></h3>
+<p class="font-body-md text-body-md text-secondary line-clamp-2 mb-md">Drive strategic decisions. Master predictive modeling, R, and business problem solving strategies.</p>
+<div class="mt-auto space-y-sm">
+<div class="flex items-center gap-xs text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span>Starts Sep 15</span>
+</div>
+<div class="flex items-center justify-between border-t border-surface-variant pt-sm mt-sm">
+<div>
+<span class="font-label-sm text-label-sm text-secondary block">EMI Starts at</span>
+<span class="font-headline-md text-[20px] text-on-surface font-semibold">₹4,899<span class="text-body-md font-normal text-secondary">/mo</span></span>
+</div>
+<a class="px-sm py-xs border border-on-surface text-on-surface rounded-DEFAULT hover:bg-surface-container-low transition-colors font-label-md text-label-md" href="program-detail.html" tabindex="-1">View Program</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center mt-xl gap-xs">
+<button class="w-10 h-10 flex items-center justify-center rounded-DEFAULT border border-outline-variant text-secondary hover:bg-surface-container-low focus:ring-2 focus:ring-primary focus:outline-none" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-DEFAULT bg-primary text-on-primary font-label-md focus:ring-2 focus:ring-primary focus:outline-none">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-DEFAULT border border-outline-variant text-on-surface hover:bg-surface-container-low focus:ring-2 focus:ring-primary focus:outline-none font-label-md">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-DEFAULT border border-outline-variant text-on-surface hover:bg-surface-container-low focus:ring-2 focus:ring-primary focus:outline-none font-label-md">3</button>
+<span class="w-10 h-10 flex items-center justify-center text-secondary font-label-md">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-DEFAULT border border-outline-variant text-on-surface hover:bg-surface-container-low focus:ring-2 focus:ring-primary focus:outline-none font-label-md">12</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-DEFAULT border border-outline-variant text-secondary hover:bg-surface-container-low focus:ring-2 focus:ring-primary focus:outline-none">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+
+<!-- Site footer -->
+<footer class="w-full bg-surface-container-low border-t border-brand-graphite border-opacity-10 mt-auto">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-unit-2xl grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-4 flex flex-col gap-unit-md">
+<a class="inline-flex items-center shrink-0" href="index.html" aria-label="KropiQ home">
+<img alt="KropiQ" class="kropiq-logo" src="assets/img/kropiq-logo.png"/>
+</a>
+<p class="font-body-md text-body-md text-secondary max-w-sm">The world's premier AI-native platform for agricultural professionals — blending traditional agronomy with precision technology.</p>
+<div class="flex gap-unit-sm">
+<a class="text-secondary hover:text-brand-orange transition-colors" href="contact.html" aria-label="Contact KropiQ"><span class="material-symbols-outlined" aria-hidden="true">mail</span></a>
+<a class="text-secondary hover:text-brand-orange transition-colors" href="contact.html" aria-label="Share"><span class="material-symbols-outlined" aria-hidden="true">share</span></a>
+</div>
+</div>
+<div class="md:col-span-8 grid grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="flex flex-col gap-unit-sm">
+<h3 class="font-label-sm text-label-sm font-semibold text-brand-graphite uppercase">Learn</h3>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="courses.html">Course Catalog</a>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="programs.html">Programs</a>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="program-detail.html">Program Details</a>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="ai-tutor.html">AI Tutor</a>
+</div>
+<div class="flex flex-col gap-unit-sm">
+<h3 class="font-label-sm text-label-sm font-semibold text-brand-graphite uppercase">Company</h3>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="about.html">About Us</a>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="business.html">For Business</a>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="resources.html">Resources</a>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="contact.html">Contact & Support</a>
+</div>
+<div class="flex flex-col gap-unit-sm">
+<h3 class="font-label-sm text-label-sm font-semibold text-brand-graphite uppercase">Account</h3>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="profile.html">My Profile</a>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="assignments.html">Assignments</a>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="certificates.html">Certificates</a>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="pricing.html">Pricing & Plans</a>
+</div>
+<div class="flex flex-col gap-unit-sm">
+<h3 class="font-label-sm text-label-sm font-semibold text-brand-graphite uppercase">Legal</h3>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-secondary hover:text-brand-orange transition-colors w-max" href="#">Site Map</a>
+</div>
+</div>
+<div class="md:col-span-12 pt-unit-lg border-t border-brand-graphite border-opacity-10 flex flex-col md:flex-row justify-between items-center gap-unit-sm">
+<p class="font-label-sm text-label-sm text-secondary">© 2026 KropiQ Education Private Limited. All rights reserved.</p>
+<p class="font-label-sm text-label-sm text-secondary">Built for the future of farming.</p>
+</div>
+</div>
+</footer>
+<script defer src="assets/js/main.js"></script>
+</body></html>
