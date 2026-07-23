@@ -54,10 +54,12 @@ Built on the official Kropiq brand sheet and Verbal Identity:
 
 | Token | Value | Use |
 | --- | --- | --- |
-| Brand orange | `#FF3D00` | CTAs, active states, accents (~10%) |
-| Slate gray | `#2B3440` | Headings, body text, nav (~30%) |
-| White | `#FFFFFF` | Backgrounds and surfaces (~60%) |
-| Black | `#000000` | Site footer and the AI-tutor feature band |
+| Deep mauve | `#5D2E56` | Identity: logo, headings, nav, icons, links, borders |
+| Dark mauve | `#4A2645` | Stats bar, footer, AI-tutor band |
+| Orange | `#FF7A12` | Accent only: CTAs, hover, key metrics, active states |
+| Warm beige | `#F6ECD8` | Page background |
+| Off-white | `#FCFAF6` | Cards and raised surfaces |
+| Text | `#2B2430` / `#574F5C` | Primary / secondary copy |
 | Typeface | Noto Sans + Noto Sans Devanagari | 56/36/24/16/14 px scale, one family across both scripts |
 | Radius | 4px standard, 8px large, pill for tags | |
 
