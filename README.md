@@ -87,13 +87,16 @@ needs, so the one file is safe to load everywhere:
   `prefers-reduced-motion`, and the reveal styles are scoped to `.js` so
   content is never hidden if scripting is unavailable.
 
-## Known issue: orange contrast
+## Contrast notes
 
-`#FF3D00` on white measures **3.55:1**, and white on `#FF3D00` is the same.
-That clears WCAG AA for large text (3:1) but not for normal-size text (4.5:1),
-so small orange links, eyebrow labels and the 14px bold button text fall short.
-Options: darken small orange text to about `#C22E00` (5.7:1) while keeping
-`#FF3D00` for fills, or raise button text to 16px semibold.
+Identity text now uses deep mauve `#5D2E56` on the warm beige, which is
+high-contrast (~9:1) and comfortable for long reading. Orange `#FF7A12` is
+confined to accents.
+
+One trade-off remains: white text on an orange fill (`#FF7A12`) measures about
+**3:1** — fine for the large, bold CTA labels used here, but below WCAG AA for
+smaller text. Keep orange for buttons/badges/metrics (where it sits on dark
+mauve at good contrast) rather than small orange-on-beige text.
 
 ## Rebuilding the stylesheet
 
