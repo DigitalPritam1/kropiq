@@ -54,9 +54,59 @@
   /* Warm neutral glass — replaces the old cool blue/white glass. */
   .glass-warm {
     background: rgba(255, 252, 248, 0.72);
-    -webkit-backdrop-filter: blur(18px);
-    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    backdrop-filter: blur(18px) saturate(140%);
     border: 1px solid rgba(93, 46, 86, 0.08);
+  }
+
+  /* Translucent deep-mauve glass — the floating stats panel. */
+  .glass-dark {
+    background: rgba(74, 38, 69, 0.82);
+    -webkit-backdrop-filter: blur(20px) saturate(130%);
+    backdrop-filter: blur(20px) saturate(130%);
+    border: 1px solid rgba(255, 252, 248, 0.10);
+  }
+
+  /* Subtle warm editorial grade for hero photography. */
+  .warm-grade {
+    filter: saturate(1.06) contrast(1.02) brightness(1.01);
+  }
+  .warm-grade::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(150deg, rgba(255, 122, 18, 0.10) 0%, rgba(93, 46, 86, 0) 42%, rgba(93, 46, 86, 0.16) 100%);
+    pointer-events: none;
+  }
+
+  /* Almost-invisible warm radial glows behind the hero. */
+  .hero-glow {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .hero-glow--orange { background: rgba(255, 122, 18, 0.16); }
+  .hero-glow--mauve  { background: rgba(93, 46, 86, 0.14); }
+
+  /* Miniature dashboard chart bars. */
+  .chart-bar {
+    width: 100%;
+    border-radius: 3px 3px 1px 1px;
+    background: rgba(93, 46, 86, 0.22);
+    transform-origin: bottom;
+  }
+  .chart-bar--accent { background: theme('colors.brand-orange'); }
+  .js .chart-bar {
+    animation: chart-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  @keyframes chart-rise {
+    from { transform: scaleY(0.15); opacity: 0.4; }
+    to   { transform: scaleY(1); opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .js .chart-bar { animation: none; }
   }
 
   /* Mobile nav drawer, toggled by assets/js/main.js. */

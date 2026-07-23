@@ -17,11 +17,11 @@
 <body class="bg-background text-on-surface font-body-md antialiased selection:bg-brand-orange selection:text-white min-h-screen flex flex-col">
 <!-- Site header -->
 <header class="w-full bg-surface border-b border-brand-graphite border-opacity-10 sticky top-0 z-50">
-<div class="flex justify-between items-center gap-unit-md px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-16">
+<div class="flex justify-between items-center gap-unit-md px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-14">
 <a class="inline-flex items-center shrink-0" href="index.html" aria-label="Kropiq होम">
 <img alt="Kropiq" class="kropiq-logo" src="assets/img/kropiq-logo.png"/>
 </a>
-<nav class="hidden lg:flex gap-unit-lg items-center" aria-label="मुख्य">
+<nav class="hidden lg:flex gap-unit-xl items-center" aria-label="मुख्य">
 <a class="font-label-sm text-label-sm text-brand-graphite hover:text-brand-orange transition-colors duration-200" href="courses.html">कोर्स</a>
 <a class="font-label-sm text-label-sm text-brand-graphite hover:text-brand-orange transition-colors duration-200" href="programs.html">प्रोग्राम</a>
 <a class="font-label-sm text-label-sm text-brand-graphite hover:text-brand-orange transition-colors duration-200" href="resources.html">रिसोर्सेज़</a>
@@ -35,7 +35,7 @@
 <a class="font-label-sm text-label-sm px-3 py-1 text-brand-graphite hover:text-brand-orange transition-colors" href="index.html" lang="en" hreflang="en">EN</a>
 <span class="font-label-sm text-label-sm px-3 py-1 bg-brand-graphite text-white" lang="hi" aria-current="true">हिंदी</span>
 </div>
-<a class="bg-brand-orange text-white font-label-sm text-label-sm px-6 py-2 rounded font-bold hover:shadow-level-2 transition-all" href="pricing.html">शुरू कीजिए</a>
+<a class="bg-brand-orange text-white font-label-sm text-label-sm px-5 py-2 rounded-xl font-semibold shadow-btn-orange hover:-translate-y-0.5 hover:shadow-btn-orange-lg transition-all duration-200" href="pricing.html">शुरू कीजिए</a>
 <button class="lg:hidden text-brand-graphite p-2 -mr-2" type="button" data-nav-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="मेन्यू खोलें">
 <span class="material-symbols-outlined" aria-hidden="true">menu</span>
 </button>
@@ -61,48 +61,53 @@
 <main>
 
 <!-- ============================================================ Hero === -->
-<section class="relative overflow-hidden border-b border-brand-graphite border-opacity-10">
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center py-unit-2xl">
+<section class="relative overflow-hidden">
+<div class="hero-glow hero-glow--orange w-[520px] h-[520px] -top-32 -right-24" aria-hidden="true"></div>
+<div class="hero-glow hero-glow--mauve w-[460px] h-[460px] -bottom-40 -left-32" aria-hidden="true"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-unit-2xl items-center py-unit-2xl lg:py-[7rem] relative z-10">
 
-<div class="lg:col-span-6 z-10 lg:pr-unit-xl reveal">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-mauve border-opacity-25 bg-brand-mauve bg-opacity-5 mb-unit-lg">
-<span class="material-symbols-outlined text-[16px] text-brand-mauve" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<div class="lg:col-span-6 reveal">
+<div class="inline-flex items-center gap-2 pl-2 pr-4 py-1.5 rounded-full glass-warm shadow-level-1 mb-unit-lg">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-brand-mauve bg-opacity-10 shrink-0">
+<span class="material-symbols-outlined text-[15px] text-brand-mauve" style="font-variation-settings: 'FILL' 1;">spa</span>
+</span>
 <span class="font-label-sm text-label-sm text-brand-mauve">किसान की तरह सोचिए। बिज़नेस की तरह चलाइए।</span>
 </div>
 
-<h1 class="font-h1-mobile text-h1-mobile md:font-h1-desktop md:text-h1-desktop text-brand-graphite mb-unit-md">
-खेती एक बिज़नेस है।<br/>इसे चलाना सीखिए।
+<h1 class="font-bold tracking-[-0.03em] text-brand-mauve text-[clamp(2.6rem,6vw,4.75rem)] leading-[1.04] mb-unit-lg">
+खेती एक बिज़नेस है।<br/>
+<span class="text-brand-orange">इसे चलाना सीखिए।</span>
 </h1>
 
-<p class="font-body-lg text-body-lg text-secondary mb-unit-lg max-w-xl">
+<p class="text-[18px] leading-[1.7] text-secondary mb-unit-xl max-w-[520px]">
 Kropiq भारत का भरोसेमंद एग्रीकल्चर ecosystem है — उन किसानों और agripreneurs के लिए जो मुनाफ़े वाली, टिकाऊ खेती खड़ी करना चाहते हैं। सीखिए, बेहतर फैसले लीजिए, और आगे बढ़िए।
 </p>
 
-<ul class="flex flex-col gap-unit-sm mb-unit-xl">
-<li class="flex items-center gap-unit-sm font-body-md text-body-md text-brand-graphite">
-<span class="material-symbols-outlined text-brand-orange text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-उन एक्सपर्ट्स से सीखिए जो खुद खेत में काम करते हैं
+<ul class="flex flex-col gap-unit-md mb-unit-2xl">
+<li class="flex items-start gap-unit-sm">
+<span class="material-symbols-outlined text-brand-orange text-[20px] mt-0.5 shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-body-md text-[#2B2430]">उन एक्सपर्ट्स से सीखिए जो खुद खेत में काम करते हैं</span>
 </li>
-<li class="flex items-center gap-unit-sm font-body-md text-body-md text-brand-graphite">
-<span class="material-symbols-outlined text-brand-orange text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-हर फ्रेमवर्क अपनी फसल, अपनी मिट्टी और अपनी मंडी पर लगाइए
+<li class="flex items-start gap-unit-sm">
+<span class="material-symbols-outlined text-brand-orange text-[20px] mt-0.5 shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-body-md text-[#2B2430]">हर फ्रेमवर्क अपनी फसल, अपनी मिट्टी और अपनी मंडी पर लगाइए</span>
 </li>
-<li class="flex items-center gap-unit-sm font-body-md text-body-md text-brand-graphite">
-<span class="material-symbols-outlined text-brand-orange text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-नतीजा नापिए — पैदावार में, लागत में, और आमदनी में
+<li class="flex items-start gap-unit-sm">
+<span class="material-symbols-outlined text-brand-orange text-[20px] mt-0.5 shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-body-md text-[#2B2430]">नतीजा नापिए — पैदावार में, लागत में, और आमदनी में</span>
 </li>
 </ul>
 
 <div class="flex flex-col sm:flex-row gap-unit-md mb-unit-xl">
-<a class="bg-brand-orange text-white font-label-sm text-label-sm px-8 py-4 rounded font-bold hover:shadow-level-2 transition-all flex items-center justify-center gap-2" href="courses.html">
+<a class="bg-brand-orange text-white text-[15px] font-semibold px-8 py-4 rounded-xl shadow-btn-orange hover:-translate-y-0.5 hover:shadow-btn-orange-lg transition-all duration-200 flex items-center justify-center gap-2" href="courses.html">
 प्रोग्राम देखिए <span class="material-symbols-outlined text-[20px]" aria-hidden="true">arrow_forward</span>
 </a>
-<a class="bg-transparent border border-brand-orange text-brand-mauve font-label-sm text-label-sm px-8 py-4 rounded font-bold hover:bg-brand-orange hover:bg-opacity-5 transition-all flex items-center justify-center gap-2" href="ai-tutor.html">
-<span class="material-symbols-outlined text-[20px]" aria-hidden="true">smart_toy</span> मेंटर से बात कीजिए
+<a class="bg-surface border border-brand-mauve border-opacity-30 text-brand-mauve text-[15px] font-semibold px-8 py-4 rounded-xl hover:bg-brand-mauve hover:bg-opacity-5 transition-all duration-200 flex items-center justify-center gap-2" href="ai-tutor.html">
+<span class="material-symbols-outlined text-[20px]" aria-hidden="true">chat_bubble</span> मेंटर से बात कीजिए
 </a>
 </div>
 
-<div class="flex flex-wrap items-center gap-unit-lg">
+<div class="flex flex-wrap items-center gap-x-unit-md gap-y-2">
 <div class="flex items-center gap-2">
 <div class="flex text-brand-orange" aria-hidden="true">
 <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
@@ -113,22 +118,73 @@ Kropiq भारत का भरोसेमंद एग्रीकल्च�
 </div>
 <span class="font-label-sm text-label-sm text-secondary">4.8 औसत लर्नर रेटिंग</span>
 </div>
+<span class="w-1 h-1 rounded-full bg-brand-mauve bg-opacity-25 hidden sm:block" aria-hidden="true"></span>
 <span class="font-label-sm text-label-sm text-secondary">18 राज्यों में 40,000+ लर्नर</span>
 </div>
 </div>
 
 <div class="lg:col-span-6 relative reveal">
-<div class="relative h-[360px] sm:h-[460px] lg:h-[560px] rounded-xl overflow-hidden shadow-level-2 border border-brand-graphite border-opacity-10">
-<img alt="An agronomist reviewing live crop analytics on a tablet inside a modern research greenhouse." class="w-full h-full object-cover" src="assets/img/photo-28.jpg"/>
+<div class="relative max-w-[520px] mx-auto lg:mr-0 lg:ml-auto">
+<div class="warm-grade relative rounded-[28px] overflow-hidden shadow-card aspect-[4/5]">
+<img alt="सुनहरी धूप में आधुनिक ग्रीनहाउस में टैबलेट पर फ़सल डेटा देखती एक एग्रोनॉमिस्ट।" class="w-full h-full object-cover" src="assets/img/photo-28.jpg"/>
 </div>
-<!-- Floating telemetry card -->
-<div class="hidden sm:flex absolute -bottom-6 left-4 lg:-left-8 glass-warm rounded-lg shadow-level-2 p-unit-md items-center gap-unit-md max-w-[280px]">
-<div class="w-10 h-10 rounded-full bg-brand-orange bg-opacity-10 flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-brand-orange text-[20px]" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+
+<!-- Floating dashboard -->
+<div class="hidden lg:block absolute -top-6 -left-6 xl:-left-10 w-[280px] glass-warm rounded-[24px] shadow-card p-5 z-20">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-brand-mauve bg-opacity-10 shrink-0">
+<span class="material-symbols-outlined text-[18px] text-brand-mauve">monitoring</span>
+</span>
+<span class="font-semibold text-[14px] text-brand-mauve">फार्म परफ़ॉर्मेंस</span>
+</div>
+<span class="text-[10px] font-medium uppercase tracking-wide text-[#8D8792] bg-brand-mauve bg-opacity-5 rounded-full px-2 py-0.5">इस सीज़न</span>
+</div>
+<div class="flex items-end gap-1.5 h-14 mb-4">
+<span class="chart-bar " style="height:40%"></span>
+<span class="chart-bar " style="height:54%"></span>
+<span class="chart-bar " style="height:47%"></span>
+<span class="chart-bar " style="height:60%"></span>
+<span class="chart-bar " style="height:56%"></span>
+<span class="chart-bar " style="height:70%"></span>
+<span class="chart-bar chart-bar--accent" style="height:82%"></span>
+<span class="chart-bar chart-bar--accent" style="height:96%"></span>
+</div>
+<div class="grid grid-cols-2 gap-x-4 gap-y-3">
+<div>
+<p class="text-[11px] font-medium uppercase tracking-wide text-[#8D8792]">Revenue</p>
+<p class="flex items-center gap-0.5 text-brand-orange font-semibold text-[15px] mt-0.5"><span class="material-symbols-outlined text-[14px]" aria-hidden="true">arrow_upward</span>28%</p>
 </div>
 <div>
-<p class="font-label-sm text-label-sm text-secondary">औसत लागत बचत</p>
-<p class="font-h3 text-h3 text-brand-graphite leading-none mt-1">₹18,400/एकड़</p>
+<p class="text-[11px] font-medium uppercase tracking-wide text-[#8D8792]">Yield</p>
+<p class="flex items-center gap-0.5 text-brand-orange font-semibold text-[15px] mt-0.5"><span class="material-symbols-outlined text-[14px]" aria-hidden="true">arrow_upward</span>22%</p>
+</div>
+<div>
+<p class="text-[11px] font-medium uppercase tracking-wide text-[#8D8792]">पानी की बचत</p>
+<p class="flex items-center gap-0.5 text-brand-orange font-semibold text-[15px] mt-0.5"><span class="material-symbols-outlined text-[14px]" aria-hidden="true">arrow_upward</span>18%</p>
+</div>
+<div>
+<p class="text-[11px] font-medium uppercase tracking-wide text-[#8D8792]">Net profit</p>
+<p class="flex items-center gap-0.5 text-brand-orange font-semibold text-[15px] mt-0.5"><span class="material-symbols-outlined text-[14px]" aria-hidden="true">arrow_upward</span>31%</p>
+</div>
+</div>
+</div>
+
+<!-- Floating savings -->
+<div class="hidden lg:flex absolute -bottom-6 left-6 glass-warm rounded-[20px] shadow-card px-4 py-3 items-center gap-3 z-20">
+<span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-brand-orange bg-opacity-10 shrink-0">
+<span class="material-symbols-outlined text-[19px] text-brand-orange" style="font-variation-settings: 'FILL' 1;">savings</span>
+</span>
+<div>
+<p class="text-[11px] text-[#8D8792]">औसत लागत बचत</p>
+<p class="font-bold text-[17px] text-brand-mauve leading-none mt-0.5">₹18,400<span class="text-[12px] font-medium text-[#8D8792]">/एकड़</span></p>
+</div>
+</div>
+
+<!-- Floating learner -->
+<div class="hidden lg:block absolute -top-5 -right-5 xl:-right-7 glass-warm rounded-[20px] shadow-card px-5 py-4 text-center w-[132px] z-20">
+<p class="font-bold text-[26px] text-brand-mauve leading-none">40,000+</p>
+<p class="text-[12px] text-[#8D8792] mt-1.5">किसान ट्रेंड</p>
 </div>
 </div>
 </div>
@@ -137,24 +193,36 @@ Kropiq भारत का भरोसेमंद एग्रीकल्च�
 </section>
 
 <!-- =========================================================== Stats === -->
-<section class="py-unit-xl">
+<section class="pb-unit-2xl -mt-unit-md">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop reveal">
-<div class="bg-brand-mauve-dark rounded-2xl shadow-level-2 px-margin-mobile md:px-unit-xl py-unit-lg grid grid-cols-2 lg:grid-cols-4 gap-gutter text-center">
-<div>
-<p class="font-h2 text-h2 text-brand-orange" data-count-to="40000" data-count-suffix="+">40,000+</p>
-<p class="font-label-sm text-label-sm text-brand-cream/75 mt-1">लर्नर ट्रेंड हुए</p>
+<div class="glass-dark rounded-[24px] shadow-card px-unit-lg md:px-unit-xl py-unit-lg grid grid-cols-2 lg:grid-cols-4 gap-x-gutter gap-y-unit-lg">
+<div class="flex items-center justify-center gap-3">
+<span class="material-symbols-outlined text-brand-orange text-[26px] shrink-0" style="font-variation-settings: 'FILL' 1;">eco</span>
+<div class="text-left">
+<p class="font-h3 text-h3 text-white leading-none" data-count-to="40000" data-count-suffix="+">40,000+</p>
+<p class="font-label-sm text-label-sm text-brand-cream/70 mt-1">लर्नर</p>
 </div>
-<div>
-<p class="font-h2 text-h2 text-brand-orange" data-count-to="18" data-count-suffix="">18</p>
-<p class="font-label-sm text-label-sm text-brand-cream/75 mt-1">राज्यों में मौजूद</p>
 </div>
-<div>
-<p class="font-h2 text-h2 text-brand-orange" data-count-to="92" data-count-suffix="%">92%</p>
-<p class="font-label-sm text-label-sm text-brand-cream/75 mt-1">अपना प्रोग्राम पूरा करते हैं</p>
+<div class="flex items-center justify-center gap-3">
+<span class="material-symbols-outlined text-brand-orange text-[26px] shrink-0" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<div class="text-left">
+<p class="font-h3 text-h3 text-white leading-none" data-count-to="18" data-count-suffix="">18</p>
+<p class="font-label-sm text-label-sm text-brand-cream/70 mt-1">राज्य</p>
 </div>
-<div>
-<p class="font-h2 text-h2 text-brand-orange" data-count-to="150" data-count-suffix="+">150+</p>
-<p class="font-label-sm text-label-sm text-brand-cream/75 mt-1">फील्ड-टेस्टेड मॉड्यूल</p>
+</div>
+<div class="flex items-center justify-center gap-3">
+<span class="material-symbols-outlined text-brand-orange text-[26px] shrink-0" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+<div class="text-left">
+<p class="font-h3 text-h3 text-white leading-none" data-count-to="92" data-count-suffix="%">92%</p>
+<p class="font-label-sm text-label-sm text-brand-cream/70 mt-1">पूर्णता</p>
+</div>
+</div>
+<div class="flex items-center justify-center gap-3">
+<span class="material-symbols-outlined text-brand-orange text-[26px] shrink-0" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<div class="text-left">
+<p class="font-h3 text-h3 text-white leading-none" data-count-to="150" data-count-suffix="+">150+</p>
+<p class="font-label-sm text-label-sm text-brand-cream/70 mt-1">मॉड्यूल</p>
+</div>
 </div>
 </div>
 </div>

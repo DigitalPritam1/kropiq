@@ -155,6 +155,13 @@ module.exports = {
       boxShadow: {
         'level-1': '0 8px 24px -6px rgba(93, 46, 86, 0.10), 0 2px 6px -2px rgba(93, 46, 86, 0.06)',
         'level-2': '0 18px 45px -8px rgba(93, 46, 86, 0.14), 0 6px 14px -4px rgba(93, 46, 86, 0.08)',
+        // premium hero elevation
+        card: '0 24px 70px -18px rgba(93, 46, 86, 0.18), 0 10px 28px -12px rgba(93, 46, 86, 0.12)',
+        'btn-orange': '0 12px 32px -8px rgba(255, 122, 18, 0.35)',
+        'btn-orange-lg': '0 18px 40px -10px rgba(255, 122, 18, 0.45)',
+      },
+      borderRadius: {
+        '4xl': '2rem',
       },
     },
   },
