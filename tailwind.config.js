@@ -2,8 +2,8 @@
  * KropiQ — canonical design tokens.
  *
  * Reconciles the 13 Stitch page themes into one system built on the Kropiq
- * brand refresh: #5D2E56 deep mauve (primary identity), #FF7A12 orange (accent
- * only), #F6ECD8 warm beige (surfaces), Noto Sans, 4px/8px radii.
+ * brand refresh: #5E2A50 deep mauve (primary identity), #FF7C12 orange (accent
+ * only), #F1E5CB warm beige (surfaces), Noto Sans, 4px/8px radii.
  * Compiled once to assets/css/kropiq.css — the shipped site loads plain CSS.
  */
 // One family across both scripts: Noto Sans for Latin, Noto Sans Devanagari for Hindi.
@@ -17,51 +17,51 @@ module.exports = {
       colors: {
         // --- brand core ---
         // Deep mauve is the identity; orange is a supporting accent only.
-        'brand-mauve': '#5D2E56',
-        'brand-mauve-dark': '#4A2645', // stats bar, footer, AI-tutor band
-        'brand-orange': '#FF7A12',     // accent: CTAs, hover, key metrics
-        'brand-cream': '#F6ECD8',      // warm beige surface
+        'brand-mauve': '#5E2A50',
+        'brand-mauve-dark': '#4B223F', // stats bar, footer, AI-tutor band
+        'brand-orange': '#FF7C12',     // accent: CTAs, hover, key metrics
+        'brand-cream': '#F1E5CB',      // warm beige surface
         // brand-graphite is repointed to mauve so every heading and hairline
         // border that referenced it becomes mauve without markup changes.
-        'brand-graphite': '#5D2E56',
+        'brand-graphite': '#5E2A50',
 
         // primary = mauve identity (headings, links, nav, icons)
-        primary: '#5D2E56',
+        primary: '#5E2A50',
         'on-primary': '#FFFFFF',
-        'primary-container': '#FF7A12', // solid attention fills that read as CTA
+        'primary-container': '#FF7C12', // solid attention fills that read as CTA
         'on-primary-container': '#FFFFFF',
-        'surface-tint': '#5D2E56',
-        'inverse-primary': '#E6CFE0',
+        'surface-tint': '#5E2A50',
+        'inverse-primary': '#E7CBDA',
 
         // --- warm neutral ladder: beige page, off-white cards ---
-        background: '#F6ECD8',
+        background: '#F1E5CB',
         'on-background': '#2B2430',
-        surface: '#FCFAF6',
+        surface: '#F7F3E9',
         'on-surface': '#2B2430',
         'surface-bright': '#FFFFFF',
-        'surface-dim': '#ECE0C8',
-        'surface-container-lowest': '#FCFAF6',
-        'surface-container-low': '#F1E7D2',
-        'surface-container': '#EFE3CC',
-        'surface-container-high': '#EADDC4',
-        'surface-container-highest': '#E5D7BC',
-        'surface-variant': '#EFE3CC',
+        'surface-dim': '#E7D9BB',
+        'surface-container-lowest': '#F7F3E9',
+        'surface-container-low': '#ECE0C5',
+        'surface-container': '#EADCBF',
+        'surface-container-high': '#E5D6B7',
+        'surface-container-highest': '#E0D0AF',
+        'surface-variant': '#EADCBF',
         'on-surface-variant': '#6B6672',
-        outline: '#C7B7A2',
-        'outline-variant': '#E3D6BE',
-        'inverse-surface': '#4A2645',
-        'inverse-on-surface': '#F6ECD8',
+        outline: '#C2B095',
+        'outline-variant': '#DECFB1',
+        'inverse-surface': '#4B223F',
+        'inverse-on-surface': '#F1E5CB',
 
         // --- secondary = warm plum-grey body copy / metadata ---
         secondary: '#574F5C',
         'on-secondary': '#FFFFFF',
-        'secondary-container': '#EFE3CC',
+        'secondary-container': '#EADCBF',
         'on-secondary-container': '#2B2430',
 
         // --- tertiary folded into mauve (single identity hue) ---
-        tertiary: '#5D2E56',
+        tertiary: '#5E2A50',
         'on-tertiary': '#FFFFFF',
-        'tertiary-container': '#F1E7D2',
+        'tertiary-container': '#ECE0C5',
         'on-tertiary-container': '#2B2430',
 
         // --- functional ---
@@ -71,16 +71,16 @@ module.exports = {
         'on-error-container': '#93000A',
 
         // --- fixed pairs (warm mauve family) ---
-        'primary-fixed': '#F0DFEA',
-        'primary-fixed-dim': '#CBA9C3',
-        'on-primary-fixed': '#261022',
-        'on-primary-fixed-variant': '#7A4270',
-        'secondary-fixed': '#EFE3CC',
-        'secondary-fixed-dim': '#D8CBB4',
+        'primary-fixed': '#F1DBE4',
+        'primary-fixed-dim': '#CCA5BD',
+        'on-primary-fixed': '#270C1C',
+        'on-primary-fixed-variant': '#7B3E6A',
+        'secondary-fixed': '#EADCBF',
+        'secondary-fixed-dim': '#D3C4A7',
         'on-secondary-fixed': '#2B2430',
         'on-secondary-fixed-variant': '#574F5C',
-        'tertiary-fixed': '#F1E7D2',
-        'tertiary-fixed-dim': '#D8CBB4',
+        'tertiary-fixed': '#ECE0C5',
+        'tertiary-fixed-dim': '#D3C4A7',
         'on-tertiary-fixed': '#2B2430',
         'on-tertiary-fixed-variant': '#574F5C',
       },
@@ -153,12 +153,12 @@ module.exports = {
       },
 
       boxShadow: {
-        'level-1': '0 8px 24px -6px rgba(93, 46, 86, 0.10), 0 2px 6px -2px rgba(93, 46, 86, 0.06)',
-        'level-2': '0 18px 45px -8px rgba(93, 46, 86, 0.14), 0 6px 14px -4px rgba(93, 46, 86, 0.08)',
+        'level-1': '0 8px 24px -6px rgba(94, 42, 80, 0.10), 0 2px 6px -2px rgba(94, 42, 80, 0.06)',
+        'level-2': '0 18px 45px -8px rgba(94, 42, 80, 0.14), 0 6px 14px -4px rgba(94, 42, 80, 0.08)',
         // premium hero elevation
-        card: '0 24px 70px -18px rgba(93, 46, 86, 0.18), 0 10px 28px -12px rgba(93, 46, 86, 0.12)',
-        'btn-orange': '0 12px 32px -8px rgba(255, 122, 18, 0.35)',
-        'btn-orange-lg': '0 18px 40px -10px rgba(255, 122, 18, 0.45)',
+        card: '0 24px 70px -18px rgba(94, 42, 80, 0.18), 0 10px 28px -12px rgba(94, 42, 80, 0.12)',
+        'btn-orange': '0 12px 32px -8px rgba(255, 124, 18, 0.35)',
+        'btn-orange-lg': '0 18px 40px -10px rgba(255, 124, 18, 0.45)',
       },
       borderRadius: {
         '4xl': '2rem',
