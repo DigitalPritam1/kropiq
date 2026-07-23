@@ -8,7 +8,7 @@
 <meta name="robots" content="noindex, nofollow"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link rel="icon" type="image/png" href="assets/img/favicon.png"/>
 <style>
 /* ============================================================
@@ -25,8 +25,9 @@
   --ink:#2B2430; --body:#574F5C; --muted:#8D8792;
   --line:rgba(94,42,80,.12); --line-dark:rgba(255,255,255,.16);
 
-  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  /* Single family — Noto Sans (site default) for both body and display. */
   --sans:"Noto Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:var(--sans);
 
   --r-sm:8px; --r-md:14px; --r-lg:18px; --r-xl:26px; --r-full:999px;
   --shadow-1:0 6px 20px -8px rgba(94,42,80,.16);
