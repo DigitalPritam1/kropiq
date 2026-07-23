@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kropiq — Better Learning. Better Farming.</title>
+<meta name="description" content="Practical, expert-led courses to help you build profitable and sustainable farming businesses. Learn from experienced farmers and industry experts on Kropiq."/>
+<meta name="robots" content="noindex, nofollow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="icon" type="image/png" href="assets/img/favicon.png"/>
+<style>
+/* ============================================================
+   Kropiq course marketplace — standalone homepage.
+   Layout after the supplied reference; PREVIOUS brand colours:
+   mauve #5E2A50, orange #FF7C12, warm beige #F1E5CB.
+   Editorial serif display + Noto Sans body. Self-contained.
+   ============================================================ */
+:root{
+  --mauve:#5E2A50; --mauve-deep:#4B223F; --mauve-soft:#7A4270;
+  --orange:#FF7C12; --orange-deep:#E0680C;
+  /* White is the base; only a barely-there warm tint separates alternating sections. */
+  --beige:#FFFFFF; --cream:#FFFFFF; --card:#FFFFFF; --tint:#FAF6EE; --beige-accent:#F1E5CB;
+  --ink:#2B2430; --body:#574F5C; --muted:#8D8792;
+  --line:rgba(94,42,80,.12); --line-dark:rgba(255,255,255,.16);
+
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:"Noto Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+
+  --r-sm:8px; --r-md:14px; --r-lg:18px; --r-xl:26px; --r-full:999px;
+  --shadow-1:0 6px 20px -8px rgba(94,42,80,.16);
+  --shadow-2:0 24px 60px -22px rgba(94,42,80,.28);
+  --ring:0 0 0 3px rgba(255,124,18,.45);
+  --container:1200px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);font-size:16px;line-height:1.6;color:var(--body);background:var(--beige);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4,p,ul{margin:0}
+ul{padding:0;list-style:none}
+:focus-visible{outline:none;box-shadow:var(--ring);border-radius:var(--r-sm)}
+.skip-link{position:absolute;left:12px;top:-60px;background:var(--mauve);color:#fff;padding:10px 16px;border-radius:var(--r-sm);z-index:100;transition:top .2s ease}
+.skip-link:focus{top:12px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+.container{width:100%;max-width:var(--container);margin:0 auto;padding:0 24px}
+.serif{font-family:var(--serif)}
+
+/* logo */
+.logo{display:inline-flex;align-items:center;gap:10px}
+.logo__mark{width:32px;height:32px;flex:none}
+.logo__word{font-size:24px;font-weight:700;letter-spacing:-.01em;color:var(--mauve)}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--cream);border-bottom:1px solid var(--line)}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;height:66px;gap:20px}
+.nav{display:none;align-items:center;gap:26px}
+.nav a{font-size:14px;font-weight:600;color:var(--mauve);display:inline-flex;align-items:center;gap:5px;transition:color .18s ease}
+.nav a:hover,.nav a:focus-visible{color:var(--orange)}
+.nav svg{width:14px;height:14px;opacity:.7}
+.header-actions{display:flex;align-items:center;gap:10px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--sans);font-size:15px;font-weight:700;padding:11px 20px;border-radius:var(--r-full);border:2px solid transparent;cursor:pointer;transition:transform .18s ease,background .18s ease,box-shadow .18s ease,color .18s ease;line-height:1;white-space:nowrap}
+.btn:active{transform:translateY(1px)}
+.btn:disabled,.btn[aria-disabled="true"]{opacity:.55;cursor:not-allowed;transform:none}
+.btn--primary{background:var(--orange);color:#fff;box-shadow:0 10px 24px -12px rgba(255,124,18,.6)}
+.btn--primary:hover{background:var(--orange-deep);transform:translateY(-2px)}
+.btn--ghost{background:transparent;color:var(--mauve);border-color:rgba(94,42,80,.35)}
+.btn--ghost:hover{background:rgba(94,42,80,.06);border-color:var(--mauve)}
+.btn--ghost-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+.btn--ghost-light:hover{background:rgba(255,255,255,.12);border-color:#fff}
+.btn--sm{padding:9px 16px;font-size:14px}
+.menu-toggle{display:inline-flex;background:transparent;border:1px solid var(--line);color:var(--mauve);width:42px;height:42px;border-radius:var(--r-sm);align-items:center;justify-content:center;cursor:pointer}
+.menu-toggle:hover{background:rgba(94,42,80,.06)}
+.drawer{display:none;background:var(--cream);border-top:1px solid var(--line)}
+.drawer.open{display:block}
+.drawer a{display:block;padding:13px 24px;color:var(--mauve);font-weight:600;border-bottom:1px solid var(--line)}
+.drawer a:hover,.drawer a:focus-visible{color:var(--orange)}
+
+.tlink{display:inline-flex;align-items:center;gap:6px;color:var(--orange);font-weight:700;font-size:14px}
+.tlink:hover{color:var(--orange-deep)}
+.tlink svg{width:16px;height:16px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);background:rgba(255,124,18,.1);padding:7px 14px;border-radius:var(--r-full)}
+.stars{display:inline-flex;color:var(--orange)}
+.stars svg{width:16px;height:16px}
+
+/* ===== Hero ===== */
+.hero{background:var(--cream);overflow:hidden}
+.hero__grid{display:grid;grid-template-columns:1fr;gap:36px;align-items:center;padding:48px 0 56px}
+.hero h1{font-family:var(--serif);font-size:clamp(38px,7vw,64px);line-height:1.02;font-weight:800;letter-spacing:-.01em;color:var(--mauve);margin-bottom:20px}
+.hero h1 .o{color:var(--orange);display:block}
+.hero__lead{font-size:18px;color:var(--body);max-width:30rem;margin-bottom:26px}
+.hero__cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:26px}
+.hero__cta .play{width:26px;height:26px;border-radius:50%;background:var(--orange);display:inline-flex;align-items:center;justify-content:center}
+.hero__cta .play svg{width:12px;height:12px;color:#fff}
+.trusted{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.avatars{display:flex}
+.avatars span{width:34px;height:34px;border-radius:50%;border:2px solid var(--cream);margin-left:-8px;background:var(--mauve-soft);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
+.avatars span:first-child{margin-left:0}
+.trusted b{color:var(--ink);font-weight:700;font-size:14px}
+.trusted .rate{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--ink);font-weight:700}
+.hero__photo{position:relative;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-2);aspect-ratio:5/4.4;max-width:520px;margin:0 auto}
+.hero__photo img{width:100%;height:100%;object-fit:cover}
+
+/* ===== Feature strip ===== */
+.features{background:var(--card);border-top:1px solid var(--line)}
+.features .container{display:grid;grid-template-columns:1fr;gap:22px;padding:36px 24px}
+.feat{display:flex;gap:14px;align-items:flex-start}
+.feat .ic{width:46px;height:46px;border-radius:var(--r-md);flex:none;background:var(--cream);border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
+.feat .ic svg{width:24px;height:24px;color:var(--mauve)}
+.feat h3{font-size:15px;font-weight:700;color:var(--ink)}
+.feat p{font-size:13px;color:var(--body)}
+
+/* ===== Stats ===== */
+.stats{padding:56px 0 0}
+.stats .row{display:grid;grid-template-columns:1fr 1fr;gap:24px;text-align:center}
+.stat .ic{width:52px;height:52px;border-radius:var(--r-md);background:rgba(94,42,80,.08);display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+.stat .ic svg{width:26px;height:26px;color:var(--mauve)}
+.stat b{display:block;font-family:var(--serif);font-size:30px;font-weight:800;color:var(--mauve);line-height:1}
+.stat span{font-size:13px;color:var(--body);font-weight:600}
+
+/* ===== Section shells ===== */
+.section{padding:80px 0}
+.section-head{margin-bottom:44px}
+.section-head.center{text-align:center;max-width:640px;margin-left:auto;margin-right:auto}
+.section-head h2{font-family:var(--serif);font-size:clamp(28px,4vw,40px);font-weight:800;color:var(--mauve);letter-spacing:-.01em}
+.section-head.center p{font-size:18px;color:var(--body);margin-top:12px}
+.section-head.split{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px}
+
+/* ===== How it works ===== */
+.steps{display:grid;grid-template-columns:1fr;gap:32px;text-align:center;position:relative}
+.step .ic{width:78px;height:78px;border-radius:50%;background:var(--mauve);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;box-shadow:var(--shadow-1);position:relative;z-index:2}
+.step .ic svg{width:32px;height:32px;color:#fff}
+.step .ic .n{position:absolute;top:-6px;right:-6px;width:26px;height:26px;border-radius:50%;background:var(--orange);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;border:3px solid var(--beige)}
+.step h3{font-size:18px;font-weight:700;color:var(--ink);margin-bottom:6px}
+.step p{font-size:14px;color:var(--body)}
+
+/* ===== Courses ===== */
+.courses{display:grid;grid-template-columns:1fr;gap:24px}
+.course{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease}
+.course:hover{transform:translateY(-5px);box-shadow:var(--shadow-2)}
+.course__img{position:relative;height:170px;overflow:hidden}
+.course__img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.course:hover .course__img img{transform:scale(1.06)}
+.course__badge{position:absolute;top:12px;left:12px;font-size:11px;font-weight:700;color:#fff;background:var(--orange);padding:4px 10px;border-radius:var(--r-full);letter-spacing:.03em}
+.course__badge.alt{background:var(--mauve)}
+.course__body{padding:18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.course__body h3{font-size:17px;font-weight:700;color:var(--mauve);line-height:1.25}
+.course__body p{font-size:13px;color:var(--body);flex:1}
+.course__meta{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--line);font-size:13px}
+.course__meta .rating{display:flex;align-items:center;gap:5px;color:var(--ink);font-weight:700}
+.course__meta .rating svg{width:15px;height:15px;color:var(--orange)}
+.course__meta .rating em{color:var(--muted);font-weight:500;font-style:normal}
+.course__meta .mods{color:var(--body);font-weight:600}
+
+/* ===== Mentors band ===== */
+.mentors{background:linear-gradient(135deg,var(--mauve) 0%,var(--mauve-deep) 100%);color:#fff;border-radius:var(--r-xl);overflow:hidden}
+.mentors .inner{display:grid;grid-template-columns:1fr;gap:30px;padding:44px}
+.mentors h2{font-family:var(--serif);font-size:clamp(26px,3.5vw,34px);font-weight:800;margin-bottom:14px}
+.mentors p{color:rgba(255,255,255,.8);font-size:15px;margin-bottom:24px}
+.mentor-list{display:grid;grid-template-columns:1fr;gap:18px}
+.mentor{display:flex;align-items:center;gap:14px}
+.mentor .ava{width:64px;height:64px;border-radius:50%;flex:none;background:var(--orange);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;font-weight:700;border:3px solid rgba(255,255,255,.25)}
+.mentor b{display:block;font-size:16px;font-weight:700}
+.mentor span{display:block;font-size:13px;color:var(--orange)}
+.mentor em{font-size:12px;color:rgba(255,255,255,.6);font-style:normal}
+
+/* ===== Testimonials ===== */
+.tcards{display:grid;grid-template-columns:1fr;gap:22px}
+.tcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:26px;box-shadow:var(--shadow-1);display:flex;flex-direction:column}
+.tcard .q{font-family:var(--serif);font-size:42px;color:var(--orange);line-height:.6;height:24px}
+.tcard blockquote{font-size:15px;color:var(--ink);margin:14px 0 20px;flex:1}
+.tcard figcaption{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:16px}
+.tcard .ava{width:42px;height:42px;border-radius:50%;flex:none;background:var(--mauve-soft);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.tcard cite{font-style:normal}
+.tcard cite b{display:block;font-size:14px;color:var(--ink);font-weight:700}
+.tcard cite span{font-size:12px;color:var(--muted)}
+
+/* ===== Ready CTA ===== */
+.ready{position:relative;border-radius:var(--r-xl);overflow:hidden;color:#fff}
+.ready img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ready::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(75,34,63,.94) 0%,rgba(94,42,80,.82) 55%,rgba(94,42,80,.5) 100%)}
+.ready .inner{position:relative;z-index:2;padding:52px 44px;max-width:640px}
+.ready h2{font-family:var(--serif);font-size:clamp(24px,3.5vw,34px);font-weight:800;margin-bottom:12px}
+.ready p{color:rgba(255,255,255,.85);font-size:16px;margin-bottom:24px}
+
+/* ===== Footer ===== */
+.site-footer{background:var(--mauve-deep);color:rgba(255,255,255,.8)}
+.site-footer .container{padding:56px 24px 28px}
+.footer-grid{display:grid;grid-template-columns:1fr;gap:32px}
+.footer-brand .logo__word{color:#fff}
+.footer-brand p{font-size:14px;color:rgba(255,255,255,.65);margin:14px 0 18px;max-width:20rem}
+.socials{display:flex;gap:10px}
+.socials a{width:36px;height:36px;border-radius:var(--r-sm);background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff}
+.socials a:hover{background:var(--orange)}
+.socials svg{width:18px;height:18px}
+.footer-col h4{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;margin-bottom:14px}
+.footer-col a,.footer-col p{display:block;font-size:14px;color:rgba(255,255,255,.72);padding:5px 0}
+.footer-col a:hover,.footer-col a:focus-visible{color:var(--orange)}
+.footer-bottom{margin-top:38px;padding-top:20px;border-top:1px solid var(--line-dark);font-size:12px;color:rgba(255,255,255,.55);text-align:center}
+
+@media (min-width:640px){
+  .features .container{grid-template-columns:1fr 1fr}
+  .stats .row{grid-template-columns:repeat(4,1fr)}
+  .steps{grid-template-columns:repeat(4,1fr)}
+  .courses{grid-template-columns:1fr 1fr}
+  .tcards{grid-template-columns:repeat(3,1fr)}
+  .footer-grid{grid-template-columns:2fr 1fr 1fr 1.3fr}
+  .mentor-list{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:899px){
+  .header-actions .btn--ghost{display:none}
+}
+@media (min-width:900px){
+  .nav{display:flex}.menu-toggle{display:none}
+  .hero__grid{grid-template-columns:1.05fr .95fr;gap:52px;padding:72px 0 84px}
+  .features .container{grid-template-columns:repeat(4,1fr)}
+  .courses{grid-template-columns:repeat(4,1fr)}
+  .mentors .inner{grid-template-columns:.8fr 1.2fr;align-items:center;padding:52px}
+  /* dashed connector line for steps */
+  .steps::before{content:"";position:absolute;top:39px;left:12%;right:12%;height:2px;background:repeating-linear-gradient(90deg,rgba(94,42,80,.28) 0 8px,transparent 8px 16px);z-index:0}
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index-courses-mauve.html" aria-label="Kropiq home">
+      <svg class="logo__mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M9 4h6v13.5L26 4h7.5L21 19.5 34 36h-8L15 22v14H9V4Z" fill="#FF7C12"/><path d="M24 4h7l-6.5 8.5L21 8.5 24 4Z" fill="#FF7C12" opacity=".7"/></svg>
+      <span class="logo__word">Kropiq</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#courses">Courses <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></a>
+      <a href="#mentors">Mentors</a>
+      <a href="#stories">Success Stories</a>
+      <a href="#how">Resources <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></a>
+      <a href="#footer">About Us</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn--ghost btn--sm" href="#">Login</a>
+      <a class="btn btn--primary btn--sm" href="#courses">Enroll Now</a>
+      <button class="menu-toggle" type="button" id="menuBtn" aria-expanded="false" aria-controls="drawer" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="drawer" id="drawer">
+    <a href="#courses">Courses</a><a href="#mentors">Mentors</a><a href="#stories">Success Stories</a>
+    <a href="#how">Resources</a><a href="#footer">About Us</a><a href="#">Login</a><a href="#courses">Enroll Now</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__grid">
+      <div>
+        <h1>Better learning.<span class="o">Better farming.</span></h1>
+        <p class="hero__lead">Practical, expert-led courses to help you build profitable and sustainable farming businesses.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#courses">Explore Courses</a>
+          <a class="btn btn--ghost" href="#"><span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span> Watch Video</a>
+        </div>
+        <div class="trusted">
+          <div class="avatars" aria-hidden="true"><span>R</span><span>S</span><span>M</span><span>A</span></div>
+          <b>Trusted by 1,50,000+ learners</b>
+          <span class="rate"><span class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 17.3 6.2 3.7-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg></span> 4.8/5</span>
+        </div>
+      </div>
+      <div class="hero__photo">
+        <img src="assets/img/photo-24.jpg" alt="A confident farmer standing in a thriving green field at golden hour."/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Feature strip -->
+<section class="features" aria-label="Why learn with Kropiq">
+  <div class="container">
+    <div class="feat"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h9v16H6a2 2 0 0 0-2 2V5Z"/><path d="M15 3h3a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2h-3"/></svg></span><div><h3>Expert-Led Courses</h3><p>Learn from experienced farmers and industry experts.</p></div></div>
+    <div class="feat"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3C7 8 7 12 7 14a5 5 0 0 0 10 0c0-2 0-6-5-11Z"/><path d="M12 22v-6"/></svg></span><div><h3>Practical &amp; Actionable</h3><p>Real-world knowledge you can apply immediately.</p></div></div>
+    <div class="feat"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/></svg></span><div><h3>Lifetime Access</h3><p>Learn at your own pace, anytime, anywhere.</p></div></div>
+    <div class="feat"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m9 14-2 7 5-3 5 3-2-7"/></svg></span><div><h3>Certificate of Completion</h3><p>Showcase your skills with a recognized certificate.</p></div></div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="stats">
+  <div class="container">
+    <div class="row">
+      <div class="stat"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m22 10-10-5L2 10l10 5 10-5Z"/><path d="M6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg></span><b>40+</b><span>Courses</span></div>
+      <div class="stat"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="10" r="2.6"/><path d="M2 20v-1a5 5 0 0 1 9.5-2.2M14 20v-.5a4 4 0 0 1 7-2.6"/></svg></span><b>1,50,000+</b><span>Happy Learners</span></div>
+      <div class="stat"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 21a6 6 0 0 1 12 0"/></svg></span><b>25+</b><span>Expert Mentors</span></div>
+      <div class="stat"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 17.3 6.2 3.7-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg></span><b>4.8/5</b><span>Learner Rating</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="section" id="how">
+  <div class="container">
+    <div class="section-head center"><h2>How Kropiq Works</h2></div>
+    <div class="steps">
+      <div class="step"><div class="ic"><span class="n">1</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h9v16H6a2 2 0 0 0-2 2V5Z"/><path d="M15 3h3a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2h-3"/></svg></div><h3>Choose a Course</h3><p>Select from our wide range of courses.</p></div>
+      <div class="step"><div class="ic"><span class="n">2</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l6-3.5-6-3.5Z"/></svg></div><h3>Learn &amp; Implement</h3><p>Learn at your own pace and apply the knowledge.</p></div>
+      <div class="step"><div class="ic"><span class="n">3</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></div><h3>Get Results</h3><p>Improve your farming and increase profits.</p></div>
+      <div class="step"><div class="ic"><span class="n">4</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z"/><path d="M2 21c0-3 1.9-5.4 5.1-6"/></svg></div><h3>Grow Your Business</h3><p>Build a sustainable and successful business.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Popular Courses -->
+<section class="section" id="courses" style="background:var(--tint)">
+  <div class="container">
+    <div class="section-head split">
+      <h2>Our Popular Courses</h2>
+      <a class="tlink" href="#">View all courses <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="courses">
+      <article class="course">
+        <div class="course__img"><span class="course__badge">Bestseller</span><img src="assets/img/photo-29.jpg" alt="Drip irrigation lines running between rows of young crops."/></div>
+        <div class="course__body">
+          <h3>Drip Irrigation Mastery Course</h3>
+          <p>A complete guide to modern irrigation techniques.</p>
+          <div class="course__meta"><span class="rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 17.3 6.2 3.7-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg>4.8 <em>(2,451)</em></span><span class="mods">12 Modules</span></div>
+        </div>
+      </article>
+      <article class="course">
+        <div class="course__img"><span class="course__badge alt">Popular</span><img src="assets/img/photo-03.jpg" alt="A tractor working neat rows across an open field."/></div>
+        <div class="course__body">
+          <h3>Dairy Farming Business Course</h3>
+          <p>Learn to build and scale a profitable dairy business.</p>
+          <div class="course__meta"><span class="rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 17.3 6.2 3.7-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg>4.8 <em>(1,987)</em></span><span class="mods">15 Modules</span></div>
+        </div>
+      </article>
+      <article class="course">
+        <div class="course__img"><img src="assets/img/photo-31.jpg" alt="Seedlings growing under controlled lighting inside a polyhouse."/></div>
+        <div class="course__body">
+          <h3>Protected Cultivation Mastery</h3>
+          <p>Increase productivity with advanced greenhouse techniques.</p>
+          <div class="course__meta"><span class="rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 17.3 6.2 3.7-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg>4.7 <em>(1,560)</em></span><span class="mods">10 Modules</span></div>
+        </div>
+      </article>
+      <article class="course">
+        <div class="course__img"><img src="assets/img/photo-10.jpg" alt="A farmer checking crops on a tablet in a green field."/></div>
+        <div class="course__body">
+          <h3>Organic Farming Business Course</h3>
+          <p>Build a sustainable and profitable organic farming business.</p>
+          <div class="course__meta"><span class="rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 17.3 6.2 3.7-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg>4.7 <em>(1,324)</em></span><span class="mods">11 Modules</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Mentors band -->
+<section class="section" id="mentors">
+  <div class="container">
+    <div class="mentors">
+      <div class="inner">
+        <div>
+          <h2>Learn from the Best</h2>
+          <p>Our mentors are experienced farmers, industry leaders and experts who are passionate about helping you succeed.</p>
+          <a class="btn btn--primary" href="#">Meet Our Mentors</a>
+        </div>
+        <div class="mentor-list">
+          <div class="mentor"><span class="ava">SK</span><div><b>Sanjay Kulkarni</b><span>Irrigation Expert</span><em>20+ Years Experience</em></div></div>
+          <div class="mentor"><span class="ava">PS</span><div><b>Dr. Priya Sharma</b><span>Dairy Farming Expert</span><em>15+ Years Experience</em></div></div>
+          <div class="mentor"><span class="ava">RY</span><div><b>Ramesh Yadav</b><span>Organic Farming Expert</span><em>18+ Years Experience</em></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section" id="stories" style="background:var(--tint)">
+  <div class="container">
+    <div class="section-head split">
+      <h2>What Our Learners Say</h2>
+      <a class="tlink" href="#">View all stories <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="tcards">
+      <figure class="tcard"><span class="q">&ldquo;</span><blockquote>The Dairy Farming course helped me increase my milk production by 40%. Highly recommended!</blockquote><figcaption><span class="ava">RP</span><cite><b>Rahul Patil</b><span>Maharashtra</span></cite></figcaption></figure>
+      <figure class="tcard"><span class="q">&ldquo;</span><blockquote>Practical and easy to understand. I applied what I learned and saw results in just 3 months.</blockquote><figcaption><span class="ava">SD</span><cite><b>Sunita Devi</b><span>Uttar Pradesh</span></cite></figcaption></figure>
+      <figure class="tcard"><span class="q">&ldquo;</span><blockquote>Best investment I made for my farming business. The mentors are very supportive.</blockquote><figcaption><span class="ava">MY</span><cite><b>Mahesh Yadav</b><span>Madhya Pradesh</span></cite></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- Ready CTA -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="ready">
+      <img src="assets/img/photo-23.jpg" alt="A drone flying over a wide green farm at sunset."/>
+      <div class="inner">
+        <h2>Ready to grow your farming business?</h2>
+        <p>Join thousands of successful farmers learning and growing with Kropiq.</p>
+        <a class="btn btn--primary" href="#courses">Explore Courses Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer" id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="index-courses-mauve.html" aria-label="Kropiq home">
+          <svg class="logo__mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M9 4h6v13.5L26 4h7.5L21 19.5 34 36h-8L15 22v14H9V4Z" fill="#FF7C12"/><path d="M24 4h7l-6.5 8.5L21 8.5 24 4Z" fill="#FF7C12" opacity=".7"/></svg>
+          <span class="logo__word">Kropiq</span>
+        </a>
+        <p>Empowering farmers with knowledge. Building a better tomorrow.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2 0-3 1-3 3v2H9v3h2v6h3v-6h2.5l.5-3H14v-1.5c0-.5.3-.5.5-.5Z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3-.4-4.4a2.6 2.6 0 0 0-1.8-1.8C18.4 5.4 12 5.4 12 5.4s-6.4 0-7.8.4a2.6 2.6 0 0 0-1.8 1.8C2 9 2 12 2 12s0 3 .4 4.4a2.6 2.6 0 0 0 1.8 1.8c1.4.4 7.8.4 7.8.4s6.4 0 7.8-.4a2.6 2.6 0 0 0 1.8-1.8C22 15 22 12 22 12Zm-12 3V9l5 3-5 3Z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.9 8H4v12h2.9V8ZM5.4 3.5A1.7 1.7 0 1 0 5.4 7a1.7 1.7 0 0 0 0-3.5ZM20 20v-6.6c0-3.5-1.9-5.1-4.3-5.1-2 0-2.9 1.1-3.3 1.9V8H9.5v12h2.9v-6.4c0-1.5.9-2.3 1.9-2.3s1.8.8 1.8 2.3V20H20Z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Quick Links</h4><a href="#courses">All Courses</a><a href="#mentors">Mentors</a><a href="#stories">Success Stories</a><a href="#how">Resources</a><a href="#footer">About Us</a></div>
+      <div class="footer-col"><h4>Support</h4><a href="#">Help Center</a><a href="#">Contact Us</a><a href="#">FAQs</a><a href="#">Terms of Use</a><a href="#">Privacy Policy</a></div>
+      <div class="footer-col"><h4>Contact Us</h4><p>✉ hello@kropiq.com</p><p>✆ +91 12345 67890</p><p>⌂ Kropiq HQ, Pune, Maharashtra, India</p></div>
+    </div>
+    <div class="footer-bottom">© 2026 Kropiq. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var b=document.getElementById('menuBtn'),d=document.getElementById('drawer');
+    if(!b||!d)return;
+    b.addEventListener('click',function(){var o=d.classList.toggle('open');b.setAttribute('aria-expanded',String(o));});
+    d.addEventListener('click',function(e){if(e.target.tagName==='A'){d.classList.remove('open');b.setAttribute('aria-expanded','false');}});
+  })();
+</script>
+</body>
+</html>
